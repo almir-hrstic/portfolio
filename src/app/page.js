@@ -50,7 +50,7 @@ export default function Home() {
 
               <div className={styles.lead__headline}>
 
-                <a href="/" className={styles.lead__title}>
+                <a href={window.location.href} className={styles.lead__title}>
                   {data.header.title}
                 </a>
 

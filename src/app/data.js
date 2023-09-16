@@ -274,7 +274,7 @@ const data = {
         },
 
         {
-          url: '/',
+          url: 'https://almir-hrstic.github.io/portfolio/',
           title: 'Portfolio',
 
           tags: [
