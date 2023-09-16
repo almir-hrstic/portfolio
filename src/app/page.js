@@ -17,12 +17,15 @@ import data from './data'
 export default function Home() {
 
   const [mousePosition, setMousePosition] = useState()
-  const [activeLink, setActiveLink] = useState()
+  const [activeUrl, setactiveUrl] = useState()
+  const [baseUrl, setBaseUrl] = useState()
 
   const navigation = useRef([])
   const icons = { email: Email, github: Github, linkedin: LinkedIn, facebook: Facebook }
 
   useEffect(() => {
+
+    setBaseUrl(window.location.href)
 
     if (window.location.hash) {
 
@@ -32,7 +35,7 @@ export default function Home() {
 
     window.addEventListener('scroll', () => navigation.current.forEach(link => {
 
-      if (link.getBoundingClientRect().top === 0) setActiveLink(link.parentElement.id)
+      if (link.getBoundingClientRect().top === 0) setactiveUrl(link.parentElement.id)
     }))
   }, [])
 
@@ -50,7 +53,7 @@ export default function Home() {
 
               <div className={styles.lead__headline}>
 
-                <a href={window.location.href} className={styles.lead__title}>
+                <a href={baseUrl} className={styles.lead__title}>
                   {data.header.title}
                 </a>
 
@@ -91,7 +94,7 @@ export default function Home() {
 
                 <div key={index} id={url} className={styles.blocks} >
 
-                  <div className={`${activeLink !== url ? styles.blocks__headline : `${styles.blocks__headline} ${styles.blocks__headline____active}`}`} ref={element => navigation.current[index] = element}>
+                  <div className={`${activeUrl !== url ? styles.blocks__headline : `${styles.blocks__headline} ${styles.blocks__headline____active}`}`} ref={element => navigation.current[index] = element}>
 
                     <a href={`#${url}`} className={styles.blocks__title}>
                       {title}
