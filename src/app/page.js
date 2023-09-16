@@ -105,7 +105,7 @@ export default function Home() {
 
                       content.map((block, index) => (
 
-                        <>
+                        <React.Fragment key={index}>
 
                           {
 
@@ -113,19 +113,19 @@ export default function Home() {
 
                               ?
 
-                              <div key={index} className={styles.block}>
+                              <div className={styles.block}>
                                 <Block styles={styles} {...block} />
                               </div>
 
                               :
 
-                              <a target="_blank" key={index} href={block.url} className={`${styles.block} ${styles.block____link}`}>
+                              <a target="_blank" href={block.url} className={`${styles.block} ${styles.block____link}`}>
                                 <Block styles={styles} {...block} />
                               </a>
 
                           }
 
-                        </>
+                        </React.Fragment>
 
                       ))
                     }

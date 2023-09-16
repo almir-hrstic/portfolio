@@ -1,8 +1,10 @@
+import React from 'react'
+
 const Block = ({ overline, title, description, tags, styles }) => {
 
   return (
 
-    <>
+    <React.Fragment>
 
       <div className={styles.block__headline}>
 
@@ -53,7 +55,7 @@ const Block = ({ overline, title, description, tags, styles }) => {
 
       }
 
-    </>
+    </React.Fragment>
   )
 }
 
