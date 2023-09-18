@@ -125,10 +125,11 @@
 
               &__headline {
                 display: flex;
-                align-items: center;
+                align-items: baseline;
                 column-gap: 10px;
 
                 svg {
+                  flex-shrink: 0;
                   transition: color .25s ease-in-out;
                 }
               }
