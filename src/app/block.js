@@ -1,12 +1,13 @@
 import React from 'react'
+import Link from './icons/link'
 
-const Block = ({ overline, title, description, tags, styles }) => {
+const Block = ({ url, overline, title, description, tags, styles }) => {
 
   return (
 
     <React.Fragment>
 
-      <div className={styles.block__headline}>
+      <div className={styles.block__header}>
 
         {
 
@@ -18,9 +19,17 @@ const Block = ({ overline, title, description, tags, styles }) => {
 
         }
 
-        <span className={styles.block__title}>
-          {title}
-        </span>
+        <div className={styles.block__headline}>
+
+          {
+            url && <Link />
+          }
+
+          <span className={styles.block__title}>
+            {title}
+          </span>
+
+        </div>
 
       </div>
 
