@@ -3,14 +3,14 @@ const data = {
   meta: {
 
     title: 'Almir Hrštić',
-    description: 'Almir Hrštić is a developer who transforms creative ideas into exceptional and user-friendly digital solutions, backed by years of experience.'
+    description: 'Almir Hrštić is a developer who transforms creative ideas into exceptional and user-friendly digital solutions.'
   },
 
   header: {
 
     title: 'Almir Hrštić',
     subtitle: 'Front-end / WordPress Developer',
-    description: 'I transform creative ideas into exceptional and user-friendly digital solutions, backed by years of experience.',
+    description: 'I transform creative ideas into exceptional and user-friendly digital solutions.',
 
     contact: [
 
