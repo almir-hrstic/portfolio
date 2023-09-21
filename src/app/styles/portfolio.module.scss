@@ -150,16 +150,6 @@
               &__description {
                 font-size: 14px;
                 color: $color-grey;
-
-                a {
-                  font-weight: 500;
-                  color: $color-white;
-                  transition: color .25s ease-in-out;
-
-                  &:hover {
-                    color: $color-yellow;
-                  }
-                }
               }
 
               &__tags {
