@@ -23,7 +23,7 @@ export default function Home() {
 
   useEffect(() => {
 
-    // fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data.json`).then(response => response.json()).then(response => setData(response))
+     fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data.json`).then(response => response.json()).then(response => setData(response))
 
     if (window.location.hash) {
 
