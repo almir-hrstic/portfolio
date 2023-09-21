@@ -23,7 +23,7 @@ export default function Home() {
 
   useEffect(() => {
 
-     fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/data.json`).then(response => response.json()).then(response => setData(response))
+     fetch(`${process.env.BASE_URL}/data.json`).then(response => response.json()).then(response => setData(response))
 
     if (window.location.hash) {
 
@@ -56,7 +56,7 @@ export default function Home() {
 
                 <div className={styles.lead__headline}>
 
-                  <a href={process.env.NEXT_PUBLIC_BASE_URL} className={styles.lead__title}>
+                  <a href={process.env.BASE_URL} className={styles.lead__title}>
                     {data.header.title}
                   </a>
 

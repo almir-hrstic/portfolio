@@ -2,7 +2,12 @@
 
 const nextConfig = {
 
-  output: 'export'
+  output: 'export',
+  reactStrictMode: true,
+
+  env: {
+    BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
+  }
 }
 
 module.exports = nextConfig
