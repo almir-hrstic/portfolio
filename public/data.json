@@ -274,7 +274,9 @@
       "title": "Disclaimer",
       "content": [
         {
-          "description": "The projects referred to above have undergone changes over time, diverging from their initial releases, and as such, I cannot assume responsibility for their active status."
+          "overline": "— 2023",
+          "title": "Projects",
+          "description": "The projects referred to above have undergone changes over time, diverging from their initial release, and as such, I cannot assume responsibility for their active status."
         }
       ]
     }
