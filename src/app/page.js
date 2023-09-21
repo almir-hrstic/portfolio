@@ -5,27 +5,25 @@ import styles from './styles/portfolio.module.scss'
 import React from 'react'
 import { useState, useRef, useEffect } from 'react'
 
-import Block from './block'
+import Block from './block/index'
 
 import Email from './icons/e-mail'
 import Github from './icons/github'
 import LinkedIn from './icons/linked-in'
 import Facebook from './icons/facebook'
 
-import data from './data'
-
 export default function Home() {
 
+  const [data, setData] = useState()
   const [mousePosition, setMousePosition] = useState()
   const [activeUrl, setactiveUrl] = useState()
-  const [baseUrl, setBaseUrl] = useState()
 
   const navigation = useRef([])
   const icons = { email: Email, github: Github, linkedin: LinkedIn, facebook: Facebook }
 
   useEffect(() => {
 
-    setBaseUrl(window.location.href)
+    fetch('/data.json').then(response => response.json()).then(response => setData(response))
 
     if (window.location.hash) {
 
@@ -37,6 +35,7 @@ export default function Home() {
 
       if (link.getBoundingClientRect().top === 0) setactiveUrl(link.parentElement.id)
     }))
+
   }, [])
 
   return (
@@ -45,39 +44,80 @@ export default function Home() {
 
       <div style={mousePosition?.top ? { background: ` radial-gradient(640px at ${mousePosition.left}px ${mousePosition.top}px, currentColor, transparent 75%)` } : null} className={styles.main} onMouseMove={event => setMousePosition(window.innerWidth >= 1024 ? { left: event.pageX, top: event.pageY } : null)} >
 
-        <div className={styles.container}>
+        {
 
-          <div className={styles.header}>
+          data &&
 
-            <div className={styles.lead}>
+          <div className={styles.container}>
 
-              <div className={styles.lead__headline}>
+            <div className={styles.header}>
 
-                <a href={baseUrl} className={styles.lead__title}>
-                  {data.header.title}
-                </a>
+              <div className={styles.lead}>
 
-                <span className={styles.lead__subtitle}>
-                  {data.header.subtitle}
-                </span>
+                <div className={styles.lead__headline}>
+
+                  <a href={process.env.NEXT_PUBLIC_BASE_URL} className={styles.lead__title}>
+                    {data.header.title}
+                  </a>
+
+                  <span className={styles.lead__subtitle}>
+                    {data.header.subtitle}
+                  </span>
+
+                </div>
+
+                <p className={styles.lead__description}>
+                  {data.header.description}
+                </p>
 
               </div>
 
-              <p className={styles.lead__description}>
-                {data.header.description}
-              </p>
+              <div className={styles.contact}>
+
+                {
+
+                  data.header.contact.map(({ url, icon }, index) => (
+
+                    <a target="_blank" key={index} href={url} className={styles.contact__link}>
+                      {React.createElement(icons[icon])}
+                    </a>
+
+                  ))
+                }
+
+              </div>
 
             </div>
 
-            <div className={styles.contact}>
+            <div className={styles.content}>
 
               {
 
-                data.header.contact.map(({ url, icon }, index) => (
+                data.blocks.map(({ url, title, content }, index) => (
 
-                  <a target="_blank" key={index} href={url} className={styles.contact__link}>
-                    {React.createElement(icons[icon])}
-                  </a>
+                  <div key={index} id={url} className={styles.blocks} >
+
+                    <div className={`${activeUrl !== url ? styles.blocks__headline : `${styles.blocks__headline} ${styles.blocks__headline____active}`}`} ref={element => navigation.current[index] = element}>
+
+                      <a href={`#${url}`} className={styles.blocks__title}>
+                        {title}
+                      </a>
+
+                    </div>
+
+                    <div className={styles.blocks__content}>
+
+                      {
+
+                        content.map((block, index) => (
+
+                          <Block key={index} block={block} styles={styles} />
+                        ))
+                      }
+
+                    </div>
+
+                  </div>
 
                 ))
               }
@@ -86,66 +126,11 @@ export default function Home() {
 
           </div>
 
-          <div className={styles.content}>
-
-            {
-
-              data.blocks.map(({ url, title, content }, index) => (
-
-                <div key={index} id={url} className={styles.blocks} >
-
-                  <div className={`${activeUrl !== url ? styles.blocks__headline : `${styles.blocks__headline} ${styles.blocks__headline____active}`}`} ref={element => navigation.current[index] = element}>
-
-                    <a href={`#${url}`} className={styles.blocks__title}>
-                      {title}
-                    </a>
-
-                  </div>
-
-                  <div className={styles.blocks__content}>
-
-                    {
-
-                      content.map((block, index) => (
-
-                        <React.Fragment key={index}>
-
-                          {
-
-                            !block.url
-
-                              ?
-
-                              <div className={styles.block}>
-                                <Block styles={styles} {...block} />
-                              </div>
-
-                              :
-
-                              <a target="_blank" href={block.url} className={`${styles.block} ${styles.block____link}`}>
-                                <Block styles={styles} {...block} />
-                              </a>
-
-                          }
-
-                        </React.Fragment>
-
-                      ))
-                    }
-
-                  </div>
-
-                </div>
-
-              ))
-            }
-
-          </div>
-
-        </div>
+        }
 
       </div>
 
     </div>
+
   )
 }

@@ -3,6 +3,7 @@
 .root {
   line-height: 1.7;
   letter-spacing: .5px;
+  min-height: 100vh;
   color: $color-white;
   background-color: $color-blue-dark;
 
@@ -149,6 +150,16 @@
               &__description {
                 font-size: 14px;
                 color: $color-grey;
+
+                a {
+                  font-weight: 500;
+                  color: $color-white;
+                  transition: color .25s ease-in-out;
+
+                  &:hover {
+                    color: $color-yellow;
+                  }
+                }
               }
 
               &__tags {

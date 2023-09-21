@@ -1,10 +1,18 @@
 import './styles/globals.scss'
 import { Inter } from 'next/font/google'
-import data from './data'
 
 const fonts = Inter({ subsets: ['latin'] })
 
-export const metadata = { title: data.meta.title, description: data.meta.description }
+export async function generateMetadata() {
+
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/meta.json`).then(response => response.json())
+
+  return {
+
+    title: data.title,
+    description: data.description
+  }
+}
 
 export default function Layout({ children }) {
 
