@@ -8,8 +8,8 @@ import { useState, useRef, useEffect } from 'react'
 import Block from './block/index'
 
 import Email from './icons/e-mail'
-import Github from './icons/github'
 import LinkedIn from './icons/linked-in'
+import Github from './icons/github'
 import Facebook from './icons/facebook'
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
 
   useEffect(() => {
 
-     fetch(`${process.env.BASE_URL}/data.json`).then(response => response.json()).then(response => setData(response))
+    fetch(`${process.env.BASE_URL}/data.json`).then(response => response.json()).then(response => setData(response))
 
     if (window.location.hash) {
 
