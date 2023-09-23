@@ -25,18 +25,26 @@ export default function Home() {
 
     fetch(`${process.env.BASE_URL}/data.json`).then(response => response.json()).then(response => setData(response))
 
+  }, [])
+
+  useEffect(() => {
+
     if (window.location.hash) {
 
-      const element = document.querySelector(`[id="${window.location.hash.substring(1)}"]`)
+      const element = document.getElementById(window.location.hash.substring(1))
       if (element) window.scrollTo({ top: window.innerWidth < 1024 ? element.offsetTop : element.offsetTop - 90 })
     }
+
+  }, [data])
+
+  useEffect(() => {
 
     window.addEventListener('scroll', () => navigation.current.forEach(link => {
 
       if (link.getBoundingClientRect().top === 0) setactiveUrl(link.parentElement.id)
     }))
 
-  }, [])
+  }, [navigation])
 
   return (
 

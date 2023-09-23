@@ -257,7 +257,6 @@
         },
         {
           "overline": "Imel, 2023",
-          "url": "https://theme.norm.cloud/",
           "title": "Norm Theme",
           "tags": [
             "WordPress",
@@ -276,7 +275,7 @@
         {
           "overline": "— 2023",
           "title": "Projects",
-          "description": "The projects referred to above have undergone changes over time, diverging from their initial release, and as such, I cannot assume responsibility for their active status."
+          "description": "The projects referred to above have undergone changes over time, diverging from their initial release, and as such, I cannot assume responsibility for their current status."
         }
       ]
     }
