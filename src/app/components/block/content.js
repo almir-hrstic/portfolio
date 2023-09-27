@@ -1,4 +1,4 @@
-import Link from '../icons/link'
+import Link from '../../icons/link'
 
 const Content = ({ url, overline, title, description, tags, styles }) => {
 

@@ -5,18 +5,18 @@ import styles from './styles/portfolio.module.scss'
 import React from 'react'
 import { useState, useRef, useEffect } from 'react'
 
-import Block from './block/index'
+import Main from './components/main'
+import Block from './components/block/index'
 
 import Email from './icons/e-mail'
 import LinkedIn from './icons/linked-in'
 import Github from './icons/github'
 import Facebook from './icons/facebook'
 
-export default function Home() {
+export default function Page() {
 
   const [data, setData] = useState()
-  const [mousePosition, setMousePosition] = useState()
-  const [activeUrl, setactiveUrl] = useState()
+  const [activeUrl, setActiveUrl] = useState()
 
   const navigation = useRef([])
   const icons = { email: Email, github: Github, linkedin: LinkedIn, facebook: Facebook }
@@ -41,91 +41,52 @@ export default function Home() {
 
     window.addEventListener('scroll', () => navigation.current.forEach(link => {
 
-      if (link.getBoundingClientRect().top === 0) setactiveUrl(link.parentElement.id)
+      if (link.getBoundingClientRect().top === 0) setActiveUrl(link.parentElement.id)
     }))
 
   }, [navigation])
 
   return (
 
-    <div className={styles.root}>
+    <Main>
 
-      <div style={mousePosition?.top ? { background: ` radial-gradient(640px at ${mousePosition.left}px ${mousePosition.top}px, currentColor, transparent 75%)` } : null} className={styles.main} onMouseMove={event => setMousePosition(window.innerWidth >= 1024 ? { left: event.pageX, top: event.pageY } : null)} >
+      {
 
-        {
+        data &&
 
-          data &&
+        <>
 
-          <div className={styles.container}>
+          <div className={styles.header}>
 
-            <div className={styles.header}>
+            <div className={styles.lead}>
 
-              <div className={styles.lead}>
+              <div className={styles.lead__headline}>
 
-                <div className={styles.lead__headline}>
+                <a href={process.env.BASE_URL} className={styles.lead__title}>
+                  {data.header.title}
+                </a>
 
-                  <a href={process.env.BASE_URL} className={styles.lead__title}>
-                    {data.header.title}
-                  </a>
-
-                  <span className={styles.lead__subtitle}>
-                    {data.header.subtitle}
-                  </span>
-
-                </div>
-
-                <p className={styles.lead__description}>
-                  {data.header.description}
-                </p>
+                <span className={styles.lead__subtitle}>
+                  {data.header.subtitle}
+                </span>
 
               </div>
 
-              <div className={styles.contact}>
-
-                {
-
-                  data.header.contact.map(({ url, icon }, index) => (
-
-                    <a target="_blank" key={index} href={url} className={styles.contact__link}>
-                      {React.createElement(icons[icon])}
-                    </a>
-
-                  ))
-                }
-
-              </div>
+              <p className={styles.lead__description}>
+                {data.header.description}
+              </p>
 
             </div>
 
-            <div className={styles.content}>
+            <div className={styles.contact}>
 
               {
 
-                data.blocks.map(({ url, title, content }, index) => (
+                data.header.contact.map(({ url, icon }, index) => (
 
-                  <div key={index} id={url} className={styles.blocks} >
-
-                    <div className={`${activeUrl !== url ? styles.blocks__headline : `${styles.blocks__headline} ${styles.blocks__headline____active}`}`} ref={element => navigation.current[index] = element}>
-
-                      <a href={`#${url}`} className={styles.blocks__title}>
-                        {title}
-                      </a>
-
-                    </div>
-
-                    <div className={styles.blocks__content}>
-
-                      {
-
-                        content.map((block, index) => (
-
-                          <Block key={index} block={block} styles={styles} />
-                        ))
-                      }
-
-                    </div>
-
-                  </div>
+                  <a target="_blank" key={index} href={url} className={styles.contact__link}>
+                    {React.createElement(icons[icon])}
+                  </a>
 
                 ))
               }
@@ -134,11 +95,46 @@ export default function Home() {
 
           </div>
 
-        }
+          <div className={styles.content}>
 
-      </div>
+            {
 
-    </div>
+              data.blocks.map(({ url, title, content }, index) => (
+
+                <div key={index} id={url} className={styles.blocks} >
+
+                  <div className={`${activeUrl !== url ? styles.blocks__headline : `${styles.blocks__headline} ${styles.blocks__headline____active}`}`} ref={element => navigation.current[index] = element}>
+
+                    <a href={`#${url}`} className={styles.blocks__title}>
+                      {title}
+                    </a>
+
+                  </div>
+
+                  <div className={styles.blocks__content}>
+
+                    {
+
+                      content.map((block, index) => (
+
+                        <Block key={index} block={block} styles={styles} />
+                      ))
+                    }
+
+                  </div>
+
+                </div>
+
+              ))
+            }
+
+          </div>
+
+        </>
+
+      }
+
+    </Main>
 
   )
 }

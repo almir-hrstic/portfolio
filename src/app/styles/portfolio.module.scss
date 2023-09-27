@@ -3,7 +3,6 @@
 .root {
   line-height: 1.7;
   letter-spacing: .5px;
-  min-height: 100vh;
   color: $color-white;
   background-color: $color-blue-dark;
 
@@ -17,8 +16,44 @@
       flex-direction: column;
       row-gap: 60px;
       width: 100%;
+      min-height: calc(100vh - 120px);
       padding: 0 20px;
       color: $color-white;
+
+      .error_404 {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+
+        &__title {
+          font-size: 80px;
+          font-weight: 600;
+          width: fit-content;
+          color: $color-yellow;
+          transition: opacity .25s ease-in-out;
+
+          &:hover {
+            opacity: .75;
+          }
+        }
+
+        &__content {
+          font-size: 20px;
+          font-weight: 500;
+          color: $color-grey;
+        }
+
+        &__link {
+          color: $color-white;
+          transition: color .25s ease-in-out;
+
+          &:hover {
+            color: $color-yellow;
+          }
+        }
+      }
 
       .header {
         display: flex;
@@ -40,6 +75,11 @@
             font-weight: 600;
             width: fit-content;
             color: $color-yellow;
+            transition: opacity .25s ease-in-out;
+
+            &:hover {
+              opacity: .75;
+            }
           }
 
           &__subtitle {
@@ -93,7 +133,15 @@
             backdrop-filter: blur(10px);
 
             &____active {
-              color: $color-yellow
+              color: $color-yellow;
+
+              .blocks__title {
+                transition: color .25s ease-in-out;
+
+                &:hover {
+                  color: rgba($color-yellow, .75);
+                }
+              }
             }
           }
 
@@ -214,6 +262,7 @@
         justify-content: space-between;
         column-gap: 90px;
         max-width: 1024px;
+        min-height: 100vh;
         padding: 0 30px;
 
         .header {
