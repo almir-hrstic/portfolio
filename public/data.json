@@ -271,18 +271,18 @@
           ]
         },
         {
-          "url": "https://almir-hrstic.github.io/portfolio/",
+          "url": "https://almir-hrstic.github.io/hadzic-photography/",
           "overline": "Standalone, 2023",
-          "title": "Portfolio",
+          "title": "Hadzic Photography",
           "tags": [
             "React",
             "Next"
           ]
         },
         {
-          "url": "https://almir-hrstic.github.io/hadzic-photography/",
+          "url": "https://almir-hrstic.github.io/portfolio/",
           "overline": "Standalone, 2023",
-          "title": "Hadzic Photography",
+          "title": "Portfolio",
           "tags": [
             "React",
             "Next"
