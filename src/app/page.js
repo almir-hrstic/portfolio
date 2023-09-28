@@ -2,8 +2,7 @@
 
 import styles from './styles/portfolio.module.scss'
 
-import React from 'react'
-import { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 import Main from './components/main'
 import Block from './components/block/index'
@@ -16,9 +15,10 @@ import Facebook from './icons/facebook'
 export default function Page() {
 
   const [data, setData] = useState()
-  const [activeUrl, setActiveUrl] = useState()
+  const [activeLink, setActiveLink] = useState()
 
-  const navigation = useRef([])
+  const links = useRef([])
+
   const icons = { email: Email, github: Github, linkedin: LinkedIn, facebook: Facebook }
 
   useEffect(() => {
@@ -39,12 +39,12 @@ export default function Page() {
 
   useEffect(() => {
 
-    window.addEventListener('scroll', () => navigation.current.forEach(link => {
+    window.addEventListener('scroll', () => links.current.forEach(link => {
 
-      if (link.getBoundingClientRect().top === 0) setActiveUrl(link.parentElement.id)
+      if (link.getBoundingClientRect().top === 0) setActiveLink(link.parentElement.id)
     }))
 
-  }, [navigation])
+  }, [links])
 
   return (
 
@@ -103,7 +103,7 @@ export default function Page() {
 
                 <div key={index} id={url} className={styles.blocks} >
 
-                  <div className={`${activeUrl !== url ? styles.blocks__headline : `${styles.blocks__headline} ${styles.blocks__headline____active}`}`} ref={element => navigation.current[index] = element}>
+                  <div className={`${activeLink !== url ? styles.blocks__headline : `${styles.blocks__headline} ${styles.blocks__headline____active}`}`} ref={element => links.current[index] = element}>
 
                     <a href={`#${url}`} className={styles.blocks__title}>
                       {title}
