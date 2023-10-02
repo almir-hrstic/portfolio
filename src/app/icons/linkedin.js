@@ -1,4 +1,4 @@
-const LinkedIn = () => {
+export default function LinkedIn() {
 
   return (
 
@@ -7,5 +7,3 @@ const LinkedIn = () => {
     </svg>
   )
 }
-
-export default LinkedIn

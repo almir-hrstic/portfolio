@@ -1,4 +1,4 @@
-const Github = () => {
+export default function GitHub() {
 
   return (
 
@@ -7,5 +7,3 @@ const Github = () => {
     </svg>
   )
 }
-
-export default Github

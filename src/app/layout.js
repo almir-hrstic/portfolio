@@ -1,6 +1,4 @@
 import './styles/globals.scss'
-import styles from './styles/portfolio.module.scss'
-
 import { Inter } from 'next/font/google'
 
 const fonts = Inter({ subsets: ['latin'] })
@@ -18,11 +16,7 @@ export default function Layout({ children }) {
     <html lang="en">
 
       <body className={fonts.className}>
-
-        <div className={styles.root}>
-          {children}
-        </div>
-
+        {children}
       </body>
 
     </html>

@@ -1,15 +1,14 @@
 'use client'
 
-import styles from './styles/portfolio.module.scss'
+import styles from './styles/page.module.scss'
+import React, { useState, useEffect, useRef } from 'react'
 
-import React, { useState, useRef, useEffect } from 'react'
-
-import Main from './components/main'
-import Block from './components/block/index'
+import Root from './components/root'
+import Entry from './components/entry/index'
 
 import Email from './icons/e-mail'
-import LinkedIn from './icons/linked-in'
-import Github from './icons/github'
+import LinkedIn from './icons/linkedin'
+import GitHub from './icons/github'
 import Facebook from './icons/facebook'
 
 export default function Page() {
@@ -18,8 +17,7 @@ export default function Page() {
   const [activeLink, setActiveLink] = useState()
 
   const links = useRef([])
-
-  const icons = { email: Email, github: Github, linkedin: LinkedIn, facebook: Facebook }
+  const icons = { email: Email, github: GitHub, linkedin: LinkedIn, facebook: Facebook }
 
   useEffect(() => {
 
@@ -37,87 +35,60 @@ export default function Page() {
 
   }, [data])
 
-  useEffect(() => {
+  useEffect(() => window.addEventListener('scroll', () => links.current.forEach(link => {
 
-    window.addEventListener('scroll', () => links.current.forEach(link => {
+    if (link.getBoundingClientRect().top === 0) setActiveLink(link.parentElement.id)
 
-      if (link.getBoundingClientRect().top === 0) setActiveLink(link.parentElement.id)
-    }))
-
-  }, [links])
+  })), [links])
 
   return (
 
-    <Main>
+    <Root>
 
-      {
+      <div className={styles.main}>
 
-        data &&
-
-        <>
-
-          <div className={styles.header}>
-
-            <div className={styles.lead}>
-
-              <div className={styles.lead__headline}>
-
-                <a href={process.env.BASE_URL} className={styles.lead__title}>
-                  {data.header.title}
-                </a>
-
-                <span className={styles.lead__subtitle}>
-                  {data.header.subtitle}
-                </span>
-
-              </div>
-
-              <p className={styles.lead__description}>
-                {data.header.description}
-              </p>
-
-            </div>
-
-            <div className={styles.contact}>
-
-              {
-
-                data.header.contact.map(({ url, icon }, index) => (
-
-                  <a target="_blank" key={index} href={url} className={styles.contact__link}>
-                    {React.createElement(icons[icon])}
-                  </a>
-
-                ))
-              }
-
-            </div>
-
-          </div>
+        <div className={styles.container}>
 
           <div className={styles.content}>
 
             {
 
-              data.blocks.map(({ url, title, content }, index) => (
+              data &&
 
-                <div key={index} id={url} className={styles.blocks} >
+              <>
 
-                  <div className={`${activeLink !== url ? styles.blocks__headline : `${styles.blocks__headline} ${styles.blocks__headline____active}`}`} ref={element => links.current[index] = element}>
+                <div className={styles.header}>
 
-                    <a href={`#${url}`} className={styles.blocks__title}>
-                      {title}
-                    </a>
+                  <div className={styles.lead}>
+
+                    <div className={styles.lead__headline}>
+
+                      <a href={process.env.BASE_URL} className={styles.lead__title}>
+                        {data.header.title}
+                      </a>
+
+                      <span className={styles.lead__subtitle}>
+                        {data.header.subtitle}
+                      </span>
+
+                    </div>
+
+                    <p className={styles.lead__description}>
+                      {data.header.description}
+                    </p>
 
                   </div>
 
-                  <div className={styles.blocks__content}>
+                  <div className={styles.contact}>
 
                     {
 
-                      content.map((block, index) => (
+                      data.header.contact.map(({ url, icon }, index) => (
 
-                        <Block key={index} block={block} styles={styles} />
+                        <a target="_blank" key={index} href={url} className={styles.contact__link}>
+                          {React.createElement(icons[icon])}
+                        </a>
+
                       ))
                     }
 
@@ -125,16 +96,52 @@ export default function Page() {
 
                 </div>
 
-              ))
+                <div className={styles.blocks}>
+
+                  {
+
+                    data.blocks.map(({ url, title, content }, index) => (
+
+                      <div key={index} id={url} className={styles.block}>
+
+                        <div className={activeLink !== url ? styles.block__headline : `${styles.block__headline} ${styles.block__headline____active}`} ref={link => links.current[index] = link}>
+
+                          <a href={`#${url}`} className={styles.block__title}>
+                            {title}
+                          </a>
+
+                        </div>
+
+                        <div className={styles.block__entries}>
+
+                          {
+
+                            content.map((block, index) => (
+
+                              <Entry key={index} block={block} />
+                            ))
+                          }
+
+                        </div>
+
+                      </div>
+
+                    ))
+                  }
+
+                </div>
+
+              </>
+
             }
 
           </div>
 
-        </>
+        </div>
 
-      }
+      </div>
 
-    </Main>
+    </Root>
 
   )
 }

@@ -1,0 +1,65 @@
+@import '../../styles/variables.scss';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 20px;
+  background-color: rgba($color-white, .025);
+  border-radius: 10px;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  &__headline {
+    display: flex;
+    align-items: baseline;
+    column-gap: 10px;
+
+    svg {
+      flex-shrink: 0;
+      transition: color .25s ease-in-out;
+    }
+  }
+
+  &__overline {
+    font-size: 12px;
+    font-weight: 500;
+    color: $color-grey;
+  }
+
+  &__title {
+    font-weight: 500;
+    color: currentColor;
+    transition: color .25s ease-in-out;
+  }
+
+  &__description {
+    font-size: 14px;
+    color: $color-grey;
+  }
+
+  &__tags {
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: $color-blue-dark;
+  }
+
+  &__tag {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: rgba($color-white, .85);
+    border-radius: 10px;
+  }
+
+  &____link:hover {
+    color: $color-yellow;
+  }
+}

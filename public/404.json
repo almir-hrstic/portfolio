@@ -1,6 +1,6 @@
 {
   "title": "404",
-  "subtitle": "Page not found",
+  "subtitle": "Page not found.",
   "message": "Back to ",
-  "link_label": "front-page"
+  "link": "front-page"
 }

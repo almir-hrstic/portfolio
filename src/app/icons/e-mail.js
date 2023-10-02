@@ -1,4 +1,4 @@
-const Email = () => {
+export default function Email() {
 
   return (
 
@@ -7,5 +7,3 @@ const Email = () => {
     </svg>
   )
 }
-
-export default Email

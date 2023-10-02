@@ -1,9 +1,8 @@
 'use client'
 
-import styles from './styles/portfolio.module.scss'
-
+import styles from './styles/not-found.module.scss'
 import { useState, useEffect } from 'react'
-import Main from './components/main'
+import Root from './components/root'
 
 export default function NotFound() {
 
@@ -17,45 +16,55 @@ export default function NotFound() {
 
   return (
 
-    <Main>
+    <Root>
 
-      <div className={styles.error_404}>
+      <div className={styles.main}>
 
-        {
+        <div className={styles.container}>
 
-          data &&
+          <div className={styles.entry}>
 
-          <>
+            {
 
-            <a href={process.env.BASE_URL} className={styles.error_404__title}>
-              {data.title}
-            </a>
+              data &&
 
-            <div className={styles.error_404__content}>
+              <>
 
-              <span>{data.subtitle}</span>
-
-              <div>
-
-                <span>
-                  {data.message}
-                </span>
-
-                <a href={process.env.BASE_URL} className={styles.error_404__link}>
-                  {data.link_label}
+                <a href={process.env.BASE_URL} className={styles.entry__title}>
+                  {data.title}
                 </a>
 
-              </div>
+                <div className={styles.entry__content}>
 
-            </div>
+                  <span>
+                    {data.subtitle}
+                  </span>
 
-          </>
+                  <div>
 
-        }
+                    <span>
+                      {data.message}
+                    </span>
+
+                    <a href={process.env.BASE_URL} className={styles.entry__link}>
+                      {data.link}
+                    </a>
+
+                  </div>
+
+                </div>
+
+              </>
+
+            }
+
+          </div>
+
+        </div>
 
       </div>
 
-    </Main>
+    </Root>
 
   )
 }
