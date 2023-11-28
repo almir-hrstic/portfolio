@@ -66,7 +66,7 @@
           "url": "https://www.imel.ba/",
           "overline": "Lukavac, Sep 2020 — Aug 2023",
           "title": "WordPress Developer · Imel",
-          "description": "Contract, full-time, in a hybrid (largely remote) environment. Developed and maintained custom-tailored e-commerce and other websites via WordPress platform."
+          "description": "Contract, full-time, in a hybrid (largely remote) environment. Developed and maintained custom-tailored e-commerce and other software via WordPress platform."
         }
       ]
     },
@@ -250,6 +250,7 @@
           ]
         },
         {
+          "url": "https://shop.miloselo.ba/",
           "title": "Milo Village",
           "overline": "Imel, 2023",
           "tags": [
