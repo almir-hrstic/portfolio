@@ -16,20 +16,20 @@
     }
   }
 
-  &__subtitle,
-  &__return {
+  &__subtitle {
     font-size: 20px;
     font-weight: 500;
     color: var(--color-grey);
   }
 
   &__link {
+    font-size: 20px;
+    font-weight: 500;
     color: var(--color-white);
     transition: color .25s ease-in-out;
 
     &:hover {
       color: var(--color-yellow);
     }
-
   }
 }

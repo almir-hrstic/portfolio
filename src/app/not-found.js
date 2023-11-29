@@ -34,17 +34,9 @@ export default function NotFound() {
               {data.subtitle}
             </p>
 
-            <div className={styles.container__return}>
-
-              <span className={styles.container__message}>
-                {data.message}
-              </span>
-
-              <a href={process.env.BASE_URL} className={styles.container__link}>
-                {data.link}
-              </a>
-
-            </div>
+            <a href={process.env.BASE_URL} className={styles.container__link}>
+              {data.message}
+            </a>
 
           </>
 
