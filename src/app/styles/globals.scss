@@ -1,11 +1,17 @@
 @import './variables.scss';
 
 html {
+  --color-white: rgba(255, 255, 255, .9);
+  --color-grey: rgba(255, 255, 255, .6);
+  --color-yellow: rgb(216, 196, 14);
+  --color-yellow-light: rgb(216, 196, 14);
+  --color-blue-light: #092443;
+  --color-blue-dark: #06182d;
   font-size: 16px;
   line-height: 1.7;
   letter-spacing: .5px;
-  color: $color-white;
-  background-color: $color-blue-dark;
+  color: var(--color-white);
+  background-color: var(--color-blue-dark);
   scroll-behavior: smooth;
 
   * {

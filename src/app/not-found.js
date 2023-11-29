@@ -2,7 +2,7 @@
 
 import styles from './styles/not-found.module.scss'
 import { useState, useEffect } from 'react'
-import Root from './components/root'
+import Base from './components/base'
 
 export default function NotFound() {
 
@@ -16,9 +16,9 @@ export default function NotFound() {
 
   return (
 
-    <Root>
+    <Base>
 
-      <div className={styles.main}>
+      <div className={styles.root}>
 
         <div className={styles.container}>
 
@@ -64,7 +64,7 @@ export default function NotFound() {
 
       </div>
 
-    </Root>
+    </Base>
 
   )
 }

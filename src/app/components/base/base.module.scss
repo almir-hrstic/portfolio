@@ -1,10 +1,9 @@
 @import '../../styles/variables.scss';
 
-.main {
+.root {
   width: 100%;
   padding: 60px 0;
-  color: $color-blue-light;
-  background: radial-gradient(ellipse at center, currentColor, transparent 75%);
+  background: radial-gradient(ellipse at center, var(--color-blue-light), transparent 75%);
 
   /* 1024px + */
 

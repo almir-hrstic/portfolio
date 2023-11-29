@@ -3,7 +3,7 @@
 import styles from './styles/page.module.scss'
 import React, { useState, useRef, useEffect } from 'react'
 
-import Root from './components/root'
+import Base from './components/base'
 import Entry from './components/entry/index'
 
 import Email from './icons/e-mail'
@@ -19,6 +19,11 @@ export default function Page() {
   const blocks = useRef([])
   const icons = { email: Email, github: GitHub, linkedin: LinkedIn, facebook: Facebook }
 
+  const getData = () => {
+
+    fetch(`${process.env.BASE_URL}/data.json`).then(response => response.json()).then(response => setData(response))
+  }
+
   const getActiveBlock = () => {
 
     blocks.current.forEach(block => {
@@ -27,13 +32,7 @@ export default function Page() {
     })
   }
 
-  useEffect(() => {
-
-    fetch(`${process.env.BASE_URL}/data.json`).then(response => response.json()).then(response => setData(response))
-
-  }, [])
-
-  useEffect(() => {
+  const triggerActiveBlock = () => {
 
     if (window.location.hash) {
 
@@ -50,16 +49,17 @@ export default function Page() {
         }
       }
     }
+  }
 
-  }, [data])
-
+  useEffect(() => getData(), [])
+  useEffect(() => triggerActiveBlock(), [data])
   useEffect(() => window.addEventListener('scroll', () => getActiveBlock()), [blocks])
 
   return (
 
-    <Root>
+    <Base>
 
-      <div className={styles.main}>
+      <div className={styles.root}>
 
         <div className={styles.container}>
 
@@ -151,7 +151,7 @@ export default function Page() {
 
       </div>
 
-    </Root>
+    </Base>
 
   )
 }

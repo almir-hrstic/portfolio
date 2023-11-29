@@ -1,11 +1,10 @@
 @import './variables.scss';
 
-.main {
+.root {
   display: flex;
   justify-content: center;
   align-items: center;
   height: calc(var(--screen-height) - 120px);
-  color: $color-white;
 
   .container {
     max-width: 375px;
@@ -34,11 +33,11 @@
       &__content {
         font-size: 20px;
         font-weight: 500;
-        color: $color-grey;
+        color: var(--color-grey);
       }
 
       &__link {
-        color: $color-white;
+        color: var(--color-white);
         transition: color .25s ease-in-out;
 
         &:hover {

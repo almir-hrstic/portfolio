@@ -1,10 +1,9 @@
 @import './variables.scss';
 
-.main {
+.root {
   display: flex;
   justify-content: center;
   min-height: calc(var(--screen-height) - 120px);
-  color: $color-white;
 
   .container {
     width: 100%;
@@ -49,7 +48,7 @@
           }
 
           &__description {
-            color: $color-grey;
+            color: var(--color-grey);
           }
         }
 
@@ -111,12 +110,8 @@
           &____active .block__headline {
             color: $color-yellow;
 
-            .block__title {
-              transition: color .25s ease-in-out;
-
-              &:hover {
-                color: rgba($color-yellow, .75);
-              }
+            .block__title:hover {
+              color: rgba($color-yellow, .75);
             }
           }
         }

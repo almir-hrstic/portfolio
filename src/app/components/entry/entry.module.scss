@@ -1,11 +1,11 @@
 @import '../../styles/variables.scss';
 
-.main {
+.root {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
   padding: 20px;
-  background-color: rgba($color-white, .025);
+  background-color: rgba(255, 255, 255, 0.02);
   border-radius: 10px;
 
   &__header {
@@ -28,18 +28,17 @@
   &__overline {
     font-size: 12px;
     font-weight: 500;
-    color: $color-grey;
+    color: var(--color-grey);
   }
 
   &__title {
     font-weight: 500;
-    color: currentColor;
     transition: color .25s ease-in-out;
   }
 
   &__description {
     font-size: 14px;
-    color: $color-grey;
+    color: var(--color-grey);
   }
 
   &__tags {
@@ -48,18 +47,18 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    color: $color-blue-dark;
+    color: var(--color-blue-dark);
   }
 
   &__tag {
     display: flex;
     align-items: center;
     padding: 5px 10px;
-    background-color: rgba($color-white, .85);
+    background-color: var(--color-white);
     border-radius: 10px;
   }
 
-  &____link:hover {
+  &____link:hover .root__headline {
     color: $color-yellow;
   }
 }

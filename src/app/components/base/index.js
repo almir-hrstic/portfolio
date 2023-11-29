@@ -1,12 +1,12 @@
-import styles from './root.module.scss'
+import styles from './base.module.scss'
 import { useState, useRef, useEffect } from 'react'
 
-export default function Root({ children }) {
+export default function Base({ children }) {
 
   const [mousePosition, setMousePosition] = useState()
-  const root = useRef()
+  const base = useRef()
 
-  const setScreenHeight = () => root.current.style.setProperty('--screen-height', `${window.innerHeight}px`)
+  const setScreenHeight = () => base.current.style.setProperty('--screen-height', `${window.innerHeight}px`)
 
   const getMousePosition = (event = null) => {
 
@@ -18,14 +18,14 @@ export default function Root({ children }) {
 
     if (!mousePosition) {
 
-      root.current.style.removeProperty('background')
+      base.current.style.removeProperty('background')
 
     } else {
 
-      root.current.style.setProperty(
+      base.current.style.setProperty(
 
         'background',
-        `radial-gradient(640px at ${mousePosition.horizontal}px ${mousePosition.vertical}px, currentColor, transparent 75%)`
+        `radial-gradient(640px at ${mousePosition.horizontal}px ${mousePosition.vertical}px, var(--color-blue-light), transparent 75%)`
       )
     }
   }
@@ -46,7 +46,7 @@ export default function Root({ children }) {
 
   return (
 
-    <div className={styles.main} ref={root} onMouseMove={event => getMousePosition(event)}>
+    <div className={styles.root} ref={base} onMouseMove={event => getMousePosition(event)}>
       {children}
     </div>
   )
