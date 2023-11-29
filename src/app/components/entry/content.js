@@ -8,46 +8,37 @@ const Content = ({ url, overline, title, description, tags, styles }) => {
 
       {
 
-        (overline || title) &&
+        overline &&
 
-        <div className={styles.root__header}>
+        <p className={styles.container__overline}>
+          {overline}
+        </p>
+
+      }
+
+      {
+
+        title &&
+
+        <div className={styles.container__headline}>
 
           {
-
-            overline &&
-
-            <span className={styles.root__overline}>
-              {overline}
-            </span>
-
+            url && <Link />
           }
 
-          {
-
-            title &&
-
-            <div className={styles.root__headline}>
-
-              {
-                url && <Link />
-              }
-
-              <span className={styles.root__title}>
-                {title}
-              </span>
-
-            </div>
-
-          }
+          <span className={styles.container__title}>
+            {title}
+          </span>
 
         </div>
+
       }
 
       {
 
         description &&
 
-        <p className={styles.root__description}>
+        <p className={styles.container__description}>
           {description}
         </p>
 
@@ -57,13 +48,13 @@ const Content = ({ url, overline, title, description, tags, styles }) => {
 
         !!tags?.length &&
 
-        <div className={styles.root__tags}>
+        <div className={styles.container__tags}>
 
           {
 
             tags.map((tag, index) => (
 
-              <span key={index} className={styles.root__tag}>
+              <span className={styles.container__tag} key={index} >
                 {tag}
               </span>
 

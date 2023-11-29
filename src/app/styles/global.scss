@@ -1,17 +1,15 @@
-@import './variables.scss';
-
 html {
   --color-white: rgba(255, 255, 255, .9);
   --color-grey: rgba(255, 255, 255, .6);
-  --color-yellow: rgb(216, 196, 14);
-  --color-yellow-light: rgb(216, 196, 14);
-  --color-blue-light: #092443;
-  --color-blue-dark: #06182d;
+  --color-yellow-light: rgba(216, 196, 14, .75);
+  --color-yellow: rgba(216, 196, 14, .9);
+  --color-blue-light: rgb(9, 36, 67);
+  --color-blue: rgb(6, 24, 45);
   font-size: 16px;
   line-height: 1.7;
   letter-spacing: .5px;
   color: var(--color-white);
-  background-color: var(--color-blue-dark);
+  background-color: var(--color-blue);
   scroll-behavior: smooth;
 
   * {

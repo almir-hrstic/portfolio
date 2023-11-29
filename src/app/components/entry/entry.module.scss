@@ -1,34 +1,22 @@
-@import '../../styles/variables.scss';
-
-.root {
-  display: flex;
-  flex-direction: column;
-  row-gap: 20px;
+.container {
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: rgba(255, 255, 255, .02);
   border-radius: 10px;
-
-  &__header {
-    display: flex;
-    flex-direction: column;
-    row-gap: 5px;
-  }
-
-  &__headline {
-    display: flex;
-    align-items: baseline;
-    column-gap: 10px;
-
-    svg {
-      flex-shrink: 0;
-      transition: color .25s ease-in-out;
-    }
-  }
+  margin-top: 20px;
 
   &__overline {
     font-size: 12px;
     font-weight: 500;
     color: var(--color-grey);
+  }
+
+  &__headline {
+    margin-top: 5px;
+
+    svg {
+      margin-right: 10px;
+      transition: color .25s ease-in-out;
+    }
   }
 
   &__title {
@@ -38,6 +26,7 @@
 
   &__description {
     font-size: 14px;
+    margin-top: 20px;
     color: var(--color-grey);
   }
 
@@ -47,18 +36,21 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    color: var(--color-blue-dark);
+    margin-top: 20px;
+    color: var(--color-blue);
   }
 
   &__tag {
-    display: flex;
-    align-items: center;
     padding: 5px 10px;
     background-color: var(--color-white);
     border-radius: 10px;
   }
 
-  &____link:hover .root__headline {
-    color: $color-yellow;
+  &____link {
+    display: block;
+
+    &:hover .container__headline {
+      color: var(--color-yellow);
+    }
   }
 }

@@ -9,13 +9,13 @@ const Entry = ({ block }) => {
 
       ?
 
-      <div className={styles.root}>
+      <div className={styles.container}>
         <Content styles={styles} {...block} />
       </div>
 
       :
 
-      <a target="_blank" href={block.url} className={`${styles.root} ${styles.root____link}`}>
+      <a href={block.url} target="_blank" className={`${styles.container} ${styles.container____link}`}>
         <Content styles={styles} {...block} />
       </a>
 

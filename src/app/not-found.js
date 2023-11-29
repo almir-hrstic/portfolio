@@ -2,7 +2,7 @@
 
 import styles from './styles/not-found.module.scss'
 import { useState, useEffect } from 'react'
-import Base from './components/base'
+import Root from './components/root'
 
 export default function NotFound() {
 
@@ -16,55 +16,43 @@ export default function NotFound() {
 
   return (
 
-    <Base>
+    <Root>
 
-      <div className={styles.root}>
+      <div className={styles.container}>
 
-        <div className={styles.container}>
+        {
 
-          <div className={styles.entry}>
+          data &&
 
-            {
+          <>
 
-              data &&
+            <a href={process.env.BASE_URL} className={styles.container__title}>
+              {data.title}
+            </a>
 
-              <>
+            <p className={styles.container__subtitle}>
+              {data.subtitle}
+            </p>
 
-                <a href={process.env.BASE_URL} className={styles.entry__title}>
-                  {data.title}
-                </a>
+            <div className={styles.container__return}>
 
-                <div className={styles.entry__content}>
+              <span className={styles.container__message}>
+                {data.message}
+              </span>
 
-                  <span>
-                    {data.subtitle}
-                  </span>
+              <a href={process.env.BASE_URL} className={styles.container__link}>
+                {data.link}
+              </a>
 
-                  <div>
+            </div>
 
-                    <span>
-                      {data.message}
-                    </span>
+          </>
 
-                    <a href={process.env.BASE_URL} className={styles.entry__link}>
-                      {data.link}
-                    </a>
-
-                  </div>
-
-                </div>
-
-              </>
-
-            }
-
-          </div>
-
-        </div>
+        }
 
       </div>
 
-    </Base>
+    </Root>
 
   )
 }
