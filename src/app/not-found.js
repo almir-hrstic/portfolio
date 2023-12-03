@@ -26,15 +26,15 @@ export default function NotFound() {
 
           <>
 
-            <a href={process.env.BASE_URL} className={styles.container__title}>
+            <a href={process.env.BASE_URL} className={`${styles.container__title} text-80-semi-bold`}>
               {data.title}
             </a>
 
-            <p className={styles.container__subtitle}>
+            <p className={`${styles.container__subtitle} text-20-medium`}>
               {data.subtitle}
             </p>
 
-            <a href={process.env.BASE_URL} className={styles.container__link}>
+            <a href={process.env.BASE_URL} className={`${styles.container__link} text-20-medium`}>
               {data.message}
             </a>
 

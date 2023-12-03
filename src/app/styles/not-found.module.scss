@@ -6,8 +6,6 @@
   margin: auto;
 
   &__title {
-    font-size: 80px;
-    font-weight: 600;
     color: var(--color-yellow);
     transition: opacity .25s ease-in-out;
 
@@ -17,14 +15,10 @@
   }
 
   &__subtitle {
-    font-size: 20px;
-    font-weight: 500;
     color: var(--color-grey);
   }
 
   &__link {
-    font-size: 20px;
-    font-weight: 500;
     color: var(--color-white);
     transition: color .25s ease-in-out;
 

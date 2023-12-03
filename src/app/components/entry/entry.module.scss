@@ -1,12 +1,10 @@
 .container {
   padding: 20px;
-  background-color: rgba(255, 255, 255, .02);
+  background-color: rgba(255, 255, 255, .01);
   border-radius: 10px;
   margin-top: 20px;
 
   &__overline {
-    font-size: 12px;
-    font-weight: 500;
     color: var(--color-grey);
   }
 
@@ -25,14 +23,11 @@
   }
 
   &__description {
-    font-size: 14px;
     margin-top: 20px;
     color: var(--color-grey);
   }
 
   &__tags {
-    font-size: 12px;
-    font-weight: 500;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;

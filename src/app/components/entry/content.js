@@ -10,7 +10,7 @@ const Content = ({ url, overline, title, description, tags, styles }) => {
 
         overline &&
 
-        <p className={styles.container__overline}>
+        <p className={`${styles.container__overline} text-12-medium`}>
           {overline}
         </p>
 
@@ -38,7 +38,7 @@ const Content = ({ url, overline, title, description, tags, styles }) => {
 
         description &&
 
-        <p className={styles.container__description}>
+        <p className={`${styles.container__description} text-14`}>
           {description}
         </p>
 
@@ -48,7 +48,7 @@ const Content = ({ url, overline, title, description, tags, styles }) => {
 
         !!tags?.length &&
 
-        <div className={styles.container__tags}>
+        <div className={`${styles.container__tags} text-12-medium`}>
 
           {
 
