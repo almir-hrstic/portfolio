@@ -1,11 +1,13 @@
+@import "../../styles/variables.scss";
+
 .container {
   padding: 20px;
-  background-color: rgba(255, 255, 255, .01);
+  background-color: rgba(255, 255, 255, .015);
   border-radius: 10px;
   margin-top: 20px;
 
   &__overline {
-    color: var(--color-grey);
+    color: $color-grey;
   }
 
   &__headline {
@@ -24,7 +26,7 @@
 
   &__description {
     margin-top: 20px;
-    color: var(--color-grey);
+    color: $color-grey;
   }
 
   &__tags {
@@ -32,12 +34,12 @@
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
-    color: var(--color-blue);
+    color: $color-blue;
   }
 
   &__tag {
     padding: 5px 10px;
-    background-color: var(--color-white);
+    background-color: $color-white;
     border-radius: 10px;
   }
 
@@ -45,7 +47,7 @@
     display: block;
 
     &:hover .container__headline {
-      color: var(--color-yellow);
+      color: $color-yellow;
     }
   }
 }

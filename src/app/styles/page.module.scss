@@ -1,3 +1,5 @@
+@import "./variables.scss";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -13,7 +15,7 @@
 
     &__title {
       width: fit-content;
-      color: var(--color-yellow);
+      color: $color-yellow;
       transition: opacity .25s ease-in-out;
 
       &:hover {
@@ -23,7 +25,7 @@
 
     &__description {
       margin-top: 20px;
-      color: var(--color-grey);
+      color: $color-grey;
     }
 
     .contact {
@@ -40,7 +42,7 @@
         }
 
         &:hover {
-          color: var(--color-yellow);
+          color: $color-yellow;
         }
       }
     }
@@ -60,15 +62,15 @@
       transition: color .25s ease-in-out;
 
       &:hover {
-        color: var(--color-yellow);
+        color: $color-yellow;
       }
     }
 
     &____active .block__headline {
-      color: var(--color-yellow);
+      color: $color-yellow;
 
       .block__title:hover {
-        color: var(--color-yellow-light);
+        color: $color-yellow-light;
       }
     }
 
@@ -79,21 +81,21 @@
 
   /* 640px + */
 
-  @media screen and (min-width: 640px) {
-    max-width: 640px;
+  @media screen and (min-width: $screen-small) {
+    max-width: $screen-small;
   }
 
   /* 768px + */
 
-  @media screen and (min-width: 768px) {
-    max-width: 768px;
+  @media screen and (min-width: $screen-medium) {
+    max-width: $screen-medium;
   }
 
   /* 1024px + */
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $screen-large) {
     flex-direction: row;
-    max-width: 1024px;
+    max-width: $screen-large;
     padding: 0 30px;
 
     .header {

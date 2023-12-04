@@ -1,12 +1,14 @@
+@import "../../styles/variables.scss";
+
 .container {
   display: flex;
   width: 100%;
-  background: radial-gradient(ellipse at center, var(--color-blue-light), transparent 75%);
+  background: radial-gradient(ellipse at center, $color-blue-light, transparent 75%);
   min-height: var(--screen-height);
 
   /* 1024px + */
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: $screen-large) {
     background: transparent;
   }
 }

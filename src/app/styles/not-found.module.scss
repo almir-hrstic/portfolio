@@ -1,12 +1,14 @@
+@import "./variables.scss";
+
 .container {
   text-align: center;
-  max-width: 375px;
+  max-width: $screen-extra-small;
   width: 100%;
   padding: 0 20px;
   margin: auto;
 
   &__title {
-    color: var(--color-yellow);
+    color: $color-yellow;
     transition: opacity .25s ease-in-out;
 
     &:hover {
@@ -15,15 +17,15 @@
   }
 
   &__subtitle {
-    color: var(--color-grey);
+    color: $color-grey;
   }
 
   &__link {
-    color: var(--color-white);
+    color: $color-white;
     transition: color .25s ease-in-out;
 
     &:hover {
-      color: var(--color-yellow);
+      color: $color-yellow;
     }
   }
 }

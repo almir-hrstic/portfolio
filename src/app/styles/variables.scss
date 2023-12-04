@@ -1,8 +1,17 @@
-html {
-  --color-white: rgba(255, 255, 255, .9);
-  --color-grey: rgba(255, 255, 255, .6);
-  --color-yellow-light: rgba(216, 196, 14, .75);
-  --color-yellow: rgba(216, 196, 14, .9);
-  --color-blue-light: rgb(9, 36, 67);
-  --color-blue: rgb(6, 24, 45);
-}
+// Screen
+
+$screen-extra-small: 375px;
+$screen-small: 640px;
+$screen-medium: 768px;
+$screen-large: 1024px;
+$screen-extra-large: 1280px;
+$screen-extra-extra-large: 1440px;
+
+// Color
+
+$color-white: rgba(255, 255, 255, .9);
+$color-grey: rgba(255, 255, 255, .6);
+$color-yellow-light: rgba(216, 196, 14, .75);
+$color-yellow: rgba(216, 196, 14, .9);
+$color-blue-light: rgba(9, 36, 67, 1);
+$color-blue: rgba(6, 24, 45, 1);

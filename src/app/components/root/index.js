@@ -1,4 +1,5 @@
 import styles from './root.module.scss'
+import { debounce } from '../../helpers'
 import { useState, useRef, useEffect } from 'react'
 
 export default function Root({ children }) {
@@ -34,11 +35,11 @@ export default function Root({ children }) {
 
     setScreenHeight()
 
-    window.addEventListener('resize', () => {
+    window.addEventListener('resize', debounce(() => {
 
       setScreenHeight()
       getMousePosition()
-    })
+    }))
 
   }, [])
 
