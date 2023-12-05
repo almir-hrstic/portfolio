@@ -63,14 +63,14 @@ export default function Page() {
           data &&
 
           <>
-
+  
             <div className={styles.header}>
 
-              <a href={process.env.BASE_URL} className={`${styles.header__title} text-40-semi-bold`}>
+              <a href={process.env.BASE_URL} className={styles.header__title}>
                 {data.header.title}
               </a>
 
-              <p className={`${styles.header__subtitle} text-20-medium`}>
+              <p className={styles.header__subtitle}>
                 {data.header.subtitle}
               </p>
 
@@ -105,7 +105,7 @@ export default function Page() {
 
                     <div className={styles.block__headline}>
 
-                      <a href={`#${url}`} className={`${styles.block__title} text-12-semi-bold`}>
+                      <a href={`#${url}`} className={styles.block__title}>
                         {title}
                       </a>
 

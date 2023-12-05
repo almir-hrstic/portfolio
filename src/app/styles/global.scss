@@ -1,10 +1,10 @@
 @import "./reset.scss";
-@import "./typography.scss";
-@import "./variables.scss";
+@import "./export.scss";
 
 html {
   color: $color-white;
   background-color: $color-blue;
+  scroll-behavior: smooth;
   --color-blue-light: #{$color-blue-light};
   @extend .text-16;
 
@@ -13,4 +13,5 @@ html {
   @media screen and (min-width: $screen-large) {
     scroll-padding-top: 90px;
   }
+
 }

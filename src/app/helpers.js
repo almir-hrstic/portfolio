@@ -1,4 +1,4 @@
-// Debounce
+/* Debounce */
 
 const debounce = (callback, timeout = 1000) => {
 

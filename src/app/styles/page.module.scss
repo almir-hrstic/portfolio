@@ -1,26 +1,30 @@
-@import "./variables.scss";
+@import "./export.scss";
 
 .container {
   display: flex;
   flex-direction: column;
   gap: 60px 90px;
-  width: 100%;
-  padding: 60px 20px;
-  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  @extend .container-large;
 
   .header {
     display: flex;
     flex-direction: column;
-    max-width: 375px;
 
     &__title {
       width: fit-content;
       color: $color-yellow;
       transition: opacity .25s ease-in-out;
+      @extend .text-40-semi-bold;
 
       &:hover {
         opacity: .75;
       }
+    }
+
+    &__subtitle {
+      @extend .text-20-medium;
     }
 
     &__description {
@@ -60,16 +64,17 @@
 
     &__title {
       transition: color .25s ease-in-out;
+      @extend .text-12-semi-bold;
 
       &:hover {
         color: $color-yellow;
       }
     }
 
-    &____active .block__headline {
+    &____active .block__title {
       color: $color-yellow;
 
-      .block__title:hover {
+      &:hover {
         color: $color-yellow-light;
       }
     }
@@ -79,24 +84,13 @@
     }
   }
 
-  /* 640px + */
-
-  @media screen and (min-width: $screen-small) {
-    max-width: $screen-small;
-  }
-
-  /* 768px + */
-
-  @media screen and (min-width: $screen-medium) {
-    max-width: $screen-medium;
-  }
 
   /* 1024px + */
 
   @media screen and (min-width: $screen-large) {
     flex-direction: row;
-    max-width: $screen-large;
-    padding: 0 30px;
+    margin-top: 0;
+    margin-bottom: 0;
 
     .header {
       position: sticky;
@@ -113,7 +107,7 @@
 
     .blocks {
       width: 55%;
-      padding: 90px 0;
+      margin: 90px 0;
 
       .block:not(:first-child) {
         margin-top: 90px;
