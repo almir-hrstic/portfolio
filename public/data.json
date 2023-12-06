@@ -24,9 +24,9 @@
   },
   "blocks": [
     {
-      "url": "about",
+      "id": "about",
       "title": "About",
-      "content": [
+      "entries": [
         {
           "overline": " 2016 — ",
           "title": "Storytime",
@@ -35,9 +35,9 @@
       ]
     },
     {
-      "url": "education",
+      "id": "education",
       "title": "Education",
-      "content": [
+      "entries": [
         {
           "url": "https://aubih.edu/",
           "overline": "Tuzla, Sep 2016 — May 2020",
@@ -47,9 +47,9 @@
       ]
     },
     {
-      "url": "experience",
+      "id": "experience",
       "title": "Experience",
-      "content": [
+      "entries": [
         {
           "url": "http://www.starnet.co.ba/",
           "overline": "Tuzla, Sep 2018 — May 2019",
@@ -71,9 +71,9 @@
       ]
     },
     {
-      "url": "projects",
+      "id": "projects",
       "title": "Projects",
-      "content": [
+      "entries": [
         {
           "overline": "StarNet, 2018",
           "title": "StarNet Theme",
@@ -276,9 +276,9 @@
       ]
     },
     {
-      "url": "disclaimer",
+      "id": "disclaimer",
       "title": "Disclaimer",
-      "content": [
+      "entries": [
         {
           "overline": "— 2023",
           "title": "Projects",

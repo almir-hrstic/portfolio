@@ -63,7 +63,7 @@ export default function Page() {
           data &&
 
           <>
-  
+
             <div className={styles.header}>
 
               <a href={process.env.BASE_URL} className={styles.header__title}>
@@ -99,13 +99,13 @@ export default function Page() {
 
               {
 
-                data.blocks.map(({ url, title, content }, index) => (
+                data.blocks.map(({ id, title, entries }, index) => (
 
-                  <div id={url} className={activeBlock !== url ? `${styles.block}` : `${styles.block} ${styles.block____active}`} ref={block => blocks.current[index] = block} key={index}>
+                  <div id={id} className={activeBlock !== id ? `${styles.block}` : `${styles.block} ${styles.block____active}`} ref={block => blocks.current[index] = block} key={index}>
 
                     <div className={styles.block__headline}>
 
-                      <a href={`#${url}`} className={styles.block__title}>
+                      <a href={`#${id}`} className={styles.block__title}>
                         {title}
                       </a>
 
@@ -115,9 +115,9 @@ export default function Page() {
 
                       {
 
-                        content.map((block, index) => (
+                        entries.map((entry, index) => (
 
-                          <Entry block={block} key={index} />
+                          <Entry entry={entry} key={index} />
                         ))
                       }
 

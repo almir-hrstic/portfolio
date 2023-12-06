@@ -1,22 +1,22 @@
 import styles from './entry.module.scss'
 import Content from '../entry/content'
 
-const Entry = ({ block }) => {
+const Entry = ({ entry }) => {
 
   return (
 
-    !block.url
+    !entry.url
 
       ?
 
       <div className={styles.container}>
-        <Content styles={styles} {...block} />
+        <Content styles={styles} {...entry} />
       </div>
 
       :
 
-      <a href={block.url} target="_blank" className={`${styles.container} ${styles.container____link}`}>
-        <Content styles={styles} {...block} />
+      <a href={entry.url} target="_blank" className={`${styles.container} ${styles.container____link}`}>
+        <Content styles={styles} {...entry} />
       </a>
 
   )
