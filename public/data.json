@@ -152,16 +152,7 @@
             "Advanced Custom Fields",
             "WPML",
             "WooCommerce",
-            "Svelte"
-          ]
-        },
-        {
-          "url": "https://www.ic-berlin.com/stores/",
-          "overline": "Imel, 2021",
-          "title": "Store Locator",
-          "tags": [
-            "WordPress",
-            "Advanced Custom Fields",
+            "Svelte",
             "Google Maps API"
           ]
         },
@@ -228,7 +219,8 @@
             "Advanced Custom Fields",
             "WPML",
             "WooCommerce",
-            "Splide"
+            "Splide",
+            "Google Maps API"
           ]
         },
         {
@@ -276,15 +268,6 @@
           "url": "https://almir-hrstic.github.io/hadzic-photography/",
           "overline": "Standalone, 2023",
           "title": "Hadzic Photography",
-          "tags": [
-            "React",
-            "Next"
-          ]
-        },
-        {
-          "url": "https://almir-hrstic.github.io/portfolio/",
-          "overline": "Standalone, 2023",
-          "title": "Portfolio",
           "tags": [
             "React",
             "Next"
