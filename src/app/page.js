@@ -32,7 +32,7 @@ export default function Page() {
     })
   }
 
-  const triggerActiveBlock = () => {
+  const updateActiveBlock = () => {
 
     if (window.location.hash) {
 
@@ -49,7 +49,7 @@ export default function Page() {
   }
 
   useEffect(() => getData(), [])
-  useEffect(() => triggerActiveBlock(), [data])
+  useEffect(() => updateActiveBlock(), [data])
   useEffect(() => window.addEventListener('scroll', () => getActiveBlock()), [blocks])
 
   return (

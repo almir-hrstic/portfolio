@@ -1,34 +1,25 @@
 import styles from './root.module.scss'
 import { debounce } from '../../helpers'
-import { useState, useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 
 export default function Container({ children }) {
 
-  const [mousePosition, setMousePosition] = useState()
   const root = useRef()
 
   const setScreenHeight = () => root.current.style.setProperty('--screen-height', `${Math.floor(window.innerHeight)}px`)
 
-  const getMousePosition = (event = null) => {
+  const clearMousePosition = () => {
 
-    if (window.innerWidth < 1024) setMousePosition(null)
-    else if (event) setMousePosition({ x: event.pageX, y: event.pageY })
+    if (window.innerWidth < 1024) root.current.style.removeProperty('background')
   }
 
-  const triggerMousePosition = () => {
+  const setMousePosition = (event) => {
 
-    if (!mousePosition) {
+    root.current.style.setProperty(
 
-      root.current.style.removeProperty('background')
-
-    } else {
-
-      root.current.style.setProperty(
-
-        'background',
-        `radial-gradient(640px at ${mousePosition.x}px ${mousePosition.y}px, var(--color-blue-light), transparent 75%)`
-      )
-    }
+      'background',
+      `radial-gradient(640px at ${event.pageX}px ${event.pageY}px, var(--color-blue-light), transparent 75%)`
+    )
   }
 
   useEffect(() => {
@@ -38,16 +29,15 @@ export default function Container({ children }) {
     window.addEventListener('resize', debounce(() => {
 
       setScreenHeight()
-      getMousePosition()
+      clearMousePosition()
+
     }))
 
   }, [])
 
-  useEffect(() => triggerMousePosition(), [mousePosition])
-
   return (
 
-    <div className={styles.root} ref={root} onMouseMove={event => getMousePosition(event)}>
+    <div className={styles.root} ref={root} onMouseMove={event => setMousePosition(event)}>
       {children}
     </div>
   )
