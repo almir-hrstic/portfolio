@@ -15,11 +15,14 @@ export default function Container({ children }) {
 
   const setMousePosition = (event) => {
 
-    root.current.style.setProperty(
+    if (window.innerWidth >= 1024) {
 
-      'background',
-      `radial-gradient(640px at ${event.pageX}px ${event.pageY}px, var(--color-blue-light), transparent 75%)`
-    )
+      root.current.style.setProperty(
+
+        'background',
+        `radial-gradient(640px at ${event.pageX}px ${event.pageY}px, var(--color-blue-light), transparent 75%)`
+      )
+    }
   }
 
   useEffect(() => {
