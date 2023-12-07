@@ -10,7 +10,7 @@ const Content = ({ url, overline, title, description, tags, styles }) => {
 
         overline &&
 
-        <p className={styles.container__overline}>
+        <p className={styles.root__overline}>
           {overline}
         </p>
 
@@ -20,13 +20,13 @@ const Content = ({ url, overline, title, description, tags, styles }) => {
 
         title &&
 
-        <div className={styles.container__headline}>
+        <div className={styles.root__headline}>
 
           {
             url && <Link />
           }
 
-          <span className={styles.container__title}>
+          <span className={styles.root__title}>
             {title}
           </span>
 
@@ -38,7 +38,7 @@ const Content = ({ url, overline, title, description, tags, styles }) => {
 
         description &&
 
-        <p className={styles.container__description}>
+        <p className={styles.root__description}>
           {description}
         </p>
 
@@ -48,13 +48,13 @@ const Content = ({ url, overline, title, description, tags, styles }) => {
 
         !!tags?.length &&
 
-        <div className={styles.container__tags}>
+        <div className={styles.root__tags}>
 
           {
 
             tags.map((tag, index) => (
 
-              <span className={styles.container__tag} key={index} >
+              <span className={styles.root__tag} key={index} >
                 {tag}
               </span>
 

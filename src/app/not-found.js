@@ -2,7 +2,7 @@
 
 import styles from './styles/not-found.module.scss'
 import { useState, useEffect } from 'react'
-import Root from './components/root'
+import Container from './components/container'
 
 export default function NotFound() {
 
@@ -16,9 +16,9 @@ export default function NotFound() {
 
   return (
 
-    <Root>
+    <Container>
 
-      <div className={styles.container}>
+      <div className={styles.root}>
 
         {
 
@@ -26,15 +26,15 @@ export default function NotFound() {
 
           <>
 
-            <a href={process.env.BASE_URL} className={styles.container__title}>
+            <a href={process.env.BASE_URL} className={styles.root__title}>
               {data.title}
             </a>
 
-            <p className={styles.container__subtitle}>
+            <p className={styles.root__subtitle}>
               {data.subtitle}
             </p>
 
-            <a href={process.env.BASE_URL} className={styles.container__link}>
+            <a href={process.env.BASE_URL} className={styles.root__link}>
               {data.message}
             </a>
 
@@ -44,7 +44,7 @@ export default function NotFound() {
 
       </div>
 
-    </Root>
+    </Container>
 
   )
 }

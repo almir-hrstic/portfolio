@@ -9,13 +9,13 @@ const Entry = ({ entry }) => {
 
       ?
 
-      <div className={styles.container}>
+      <div className={styles.root}>
         <Content styles={styles} {...entry} />
       </div>
 
       :
 
-      <a href={entry.url} target="_blank" className={`${styles.container} ${styles.container____link}`}>
+      <a href={entry.url} target="_blank" className={`${styles.root} ${styles.root____link}`}>
         <Content styles={styles} {...entry} />
       </a>
 

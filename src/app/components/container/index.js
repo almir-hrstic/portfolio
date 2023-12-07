@@ -2,7 +2,7 @@ import styles from './root.module.scss'
 import { debounce } from '../../helpers'
 import { useState, useRef, useEffect } from 'react'
 
-export default function Root({ children }) {
+export default function Container({ children }) {
 
   const [mousePosition, setMousePosition] = useState()
   const root = useRef()
@@ -47,7 +47,7 @@ export default function Root({ children }) {
 
   return (
 
-    <div className={styles.container} ref={root} onMouseMove={event => getMousePosition(event)}>
+    <div className={styles.root} ref={root} onMouseMove={event => getMousePosition(event)}>
       {children}
     </div>
   )

@@ -3,7 +3,7 @@
 import styles from './styles/page.module.scss'
 import React, { useState, useRef, useEffect } from 'react'
 
-import Root from './components/root'
+import Container from './components/container'
 import Entry from './components/entry/index'
 
 import Email from './icons/e-mail'
@@ -54,9 +54,9 @@ export default function Page() {
 
   return (
 
-    <Root>
+    <Container>
 
-      <div className={styles.container}>
+      <div className={styles.root}>
 
         {
 
@@ -136,7 +136,7 @@ export default function Page() {
 
       </div>
 
-    </Root>
+    </Container>
 
   )
 }
