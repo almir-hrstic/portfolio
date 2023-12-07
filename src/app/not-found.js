@@ -8,11 +8,12 @@ export default function NotFound() {
 
   const [data, setData] = useState()
 
-  useEffect(() => {
+  const getData = () => {
 
     fetch(`${process.env.BASE_URL}/404.json`).then(response => response.json()).then(response => setData(response))
+  }
 
-  }, [])
+  useEffect(() => getData(), [])
 
   return (
 

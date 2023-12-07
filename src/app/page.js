@@ -49,8 +49,16 @@ export default function Page() {
   }
 
   useEffect(() => getData(), [])
-  useEffect(() => updateActiveBlock(), [data])
-  useEffect(() => window.addEventListener('scroll', () => getActiveBlock()), [blocks])
+
+  useEffect(() => {
+
+    if (data) {
+
+      updateActiveBlock()
+      window.addEventListener('scroll', () => getActiveBlock())
+    }
+
+  }, [data])
 
   return (
 
