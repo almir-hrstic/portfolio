@@ -1,4 +1,4 @@
-import styles from './root.module.scss'
+import styles from './container.module.scss'
 import { debounce } from '../../helpers'
 import { useRef, useEffect } from 'react'
 

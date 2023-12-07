@@ -2,8 +2,9 @@
 
 .root {
   text-align: center;
+  max-width: $screen-extra-small;
   margin: auto;
-  @extend .container-extra-small;
+  padding: 0 20px;
 
   &__title {
     color: $color-yellow;
@@ -28,5 +29,11 @@
     &:hover {
       color: $color-yellow;
     }
+  }
+
+  // 1024px +
+
+  @media screen and (min-width: $screen-large) {
+    padding: 0 30px;
   }
 }
