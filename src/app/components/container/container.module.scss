@@ -5,6 +5,7 @@
   width: 100%;
   background: radial-gradient(ellipse at center, $color-blue-light, transparent 75%);
   min-height: var(--screen-height);
+  --color-blue-light: #{$color-blue-light};
 
   /* 1024px + */
 
