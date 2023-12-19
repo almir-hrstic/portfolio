@@ -6,11 +6,11 @@
   background: radial-gradient(ellipse at center, $color-blue-light, transparent 75%);
   --color-blue-light: #{$color-blue-light};
 
-  &:not([data-max-height]) {
+  &:not([data-contain]) {
     min-height: 100vh;
   }
 
-  &[data-max-height] {
+  &[data-contain] {
     height: 100vh;
     max-height: var(--screen-height);
   }

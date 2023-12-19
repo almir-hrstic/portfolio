@@ -2,7 +2,7 @@ import styles from './container.module.scss'
 import { debounce } from '../../helpers'
 import { useRef, useEffect } from 'react'
 
-export default function Container({ maxHeight, children }) {
+export default function Container({ contain, children }) {
 
   const root = useRef()
 
@@ -40,7 +40,7 @@ export default function Container({ maxHeight, children }) {
 
   return (
 
-    <div className={styles.root} data-max-height={maxHeight} ref={root} onMouseMove={event => setMousePosition(event)}>
+    <div className={styles.root} data-contain={contain} ref={root} onMouseMove={event => setMousePosition(event)}>
       {children}
     </div>
   )
