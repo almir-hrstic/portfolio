@@ -6,10 +6,7 @@ export default function Container({ children }) {
 
   const root = useRef()
 
-  const setScreenHeight = () => {
-
-    setTimeout(() => root.current.style.setProperty('--screen-height', `${window.innerHeight - .01}px`), 1000)
-  }
+  const setScreenHeight = () => root.current.style.setProperty('--screen-height', `${window.innerHeight - .01}px`)
 
   const clearMousePosition = () => {
 
