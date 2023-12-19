@@ -3,11 +3,15 @@
 .root {
   display: flex;
   width: 100%;
-  min-height: 100vh;
   background: radial-gradient(ellipse at center, $color-blue-light, transparent 75%);
   --color-blue-light: #{$color-blue-light};
 
+  &:not([data-max-height]) {
+    min-height: 100vh;
+  }
+
   &[data-max-height] {
+    height: 100vh;
     max-height: var(--screen-height);
   }
 
