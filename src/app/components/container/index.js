@@ -2,11 +2,11 @@ import styles from './container.module.scss'
 import { debounce } from '../../helpers'
 import { useRef, useEffect } from 'react'
 
-export default function Container({ children }) {
+export default function Container({ maxHeight, children }) {
 
   const root = useRef()
 
-  const setScreenHeight = () => root.current.style.setProperty('min-height', `${window.innerHeight - .5}px`)
+  const setScreenHeight = () => root.current.style.setProperty('--screen-height', `${window.innerHeight}px`)
 
   const clearMousePosition = () => {
 
@@ -40,7 +40,7 @@ export default function Container({ children }) {
 
   return (
 
-    <div className={styles.root} ref={root} onMouseMove={event => setMousePosition(event)}>
+    <div className={styles.root} data-max-height={maxHeight} ref={root} onMouseMove={event => setMousePosition(event)}>
       {children}
     </div>
   )

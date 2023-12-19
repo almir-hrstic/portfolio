@@ -17,7 +17,7 @@ export default function NotFound() {
 
   return (
 
-    <Container>
+    <Container maxHeight>
 
       <div className={styles.root}>
 
