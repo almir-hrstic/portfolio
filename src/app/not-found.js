@@ -10,7 +10,7 @@ export default function NotFound() {
 
   const getData = () => {
 
-    setTimeout(() => fetch(`${process.env.BASE_URL}/404.json`).then(response => response.json()).then(response => setData(response)), 2000)
+    fetch(`${process.env.BASE_URL}/404.json`).then(response => response.json()).then(response => setData(response))
   }
 
   useEffect(() => getData(), [])
