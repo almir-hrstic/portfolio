@@ -18,7 +18,7 @@
       transition: opacity .25s ease-in-out;
       @extend .text-40-semi-bold;
 
-      &:hover {
+      &:active {
         opacity: .75;
       }
     }
@@ -45,7 +45,7 @@
           transition: color .25s ease-in-out;
         }
 
-        &:hover {
+        &:active {
           color: $color-yellow;
         }
       }
@@ -66,7 +66,7 @@
       transition: color .25s ease-in-out;
       @extend .text-12-semi-bold;
 
-      &:hover {
+      &:active {
         color: $color-yellow;
       }
     }
@@ -74,7 +74,7 @@
     &____active .block__title {
       color: $color-yellow;
 
-      &:hover {
+      &:active {
         color: $color-yellow-light;
       }
     }
@@ -107,22 +107,41 @@
     .header {
       position: sticky;
       top: 0;
-      width: 45%;
-      height: var(--screen-height);
+      width: calc(50% - 90px);
+      height: 100vh;
       padding: 90px 0;
+
+      &__title:hover {
+        opacity: .75;
+      }
 
       .contact {
         padding-top: 90px;
         margin-top: auto;
+
+        &__link:hover {
+          color: $color-yellow;
+        }
       }
     }
 
     .blocks {
-      width: 55%;
+      width: 50%;
       margin: 90px 0;
 
-      .block:not(:first-child) {
-        margin-top: 90px;
+      .block {
+
+        &__title:hover {
+          color: $color-yellow;
+        }
+
+        &____active .block__title:hover {
+          color: $color-yellow-light;
+        }
+
+        &:not(:first-child) {
+          margin-top: 90px;
+        }
       }
     }
   }

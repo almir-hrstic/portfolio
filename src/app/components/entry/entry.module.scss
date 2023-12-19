@@ -49,7 +49,16 @@
   &____link {
     display: block;
 
-    &:hover .root__headline {
+    &:active .root__headline {
+      color: $color-yellow;
+    }
+  }
+
+  // 1024px +
+
+  @media screen and (min-width: $screen-large) {
+
+    &____link:hover .root__headline {
       color: $color-yellow;
     }
   }
