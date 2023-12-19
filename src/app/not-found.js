@@ -17,7 +17,7 @@ export default function NotFound() {
 
   return (
 
-    <Container contain>
+    <Container>
 
       <div className={styles.root}>
 
