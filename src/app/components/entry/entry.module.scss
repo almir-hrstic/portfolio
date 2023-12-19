@@ -54,6 +54,10 @@
     }
   }
 
+  &:not(:has(:nth-child(n+2))) * {
+    margin-top: 0;
+  }
+
   // 1024px +
 
   @media screen and (min-width: $screen-large) {
