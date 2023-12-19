@@ -4,6 +4,7 @@
   display: flex;
   width: 100%;
   background: radial-gradient(ellipse at center, $color-blue-light, transparent 75%);
+  --screen-height: 100vh;
   --color-blue-light: #{$color-blue-light};
 
   &:not([data-contain]) {
