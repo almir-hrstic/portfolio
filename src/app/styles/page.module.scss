@@ -108,7 +108,7 @@
       position: sticky;
       top: 0;
       width: 45%;
-      height: 100vh;
+      height: var(--screen-height);
       padding: 90px 0;
 
       .contact {
