@@ -25,16 +25,18 @@ export default function Container({ children }) {
     }
   }
 
+  const setResize = debounce(() => {
+
+    setScreenHeight()
+    clearMousePosition()
+  })
+
   useEffect(() => {
 
     setScreenHeight()
+    window.addEventListener('resize', setResize)
 
-    window.addEventListener('resize', debounce(() => {
-
-      setScreenHeight()
-      clearMousePosition()
-
-    }))
+    return () => window.removeEventListener('resize', setResize)
 
   }, [])
 

@@ -41,7 +41,6 @@ export default function Page() {
         if (blocks.current[i].id === window.location.hash.substring(1)) {
 
           window.scrollTo({ top: window.innerWidth < 1024 ? blocks.current[i].offsetTop : blocks.current[i].offsetTop })
-
           break
         }
       }
@@ -55,8 +54,10 @@ export default function Page() {
     if (data) {
 
       updateActiveBlock()
-      window.addEventListener('scroll', () => getActiveBlock())
+      window.addEventListener('scroll', getActiveBlock)
     }
+
+    return () => window.removeEventListener('scroll', getActiveBlock)
 
   }, [data])
 
