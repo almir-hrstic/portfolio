@@ -16,7 +16,7 @@
       width: fit-content;
       color: $color-yellow;
       transition: opacity .25s ease-in-out;
-      @extend .text-40-semi-bold;
+      @extend .text-36-semi-bold;
 
       &:active {
         opacity: .75;
@@ -24,7 +24,7 @@
     }
 
     &__subtitle {
-      @extend .text-20-medium;
+      @extend .text-18-medium;
     }
 
     &__description {

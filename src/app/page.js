@@ -28,7 +28,7 @@ export default function Page() {
 
     blocks.current.forEach(block => {
 
-      if (block.children[0].getBoundingClientRect().top === 0) setActiveBlock(block.id)
+      if (block.children[0].getBoundingClientRect().top <= 1) setActiveBlock(block.id)
     })
   }
 
@@ -40,7 +40,11 @@ export default function Page() {
 
         if (blocks.current[i].id === window.location.hash.substring(1)) {
 
-          window.scrollTo({ top: window.innerWidth < 1024 ? blocks.current[i].offsetTop : blocks.current[i].offsetTop })
+          window.scrollTo({
+
+            top: window.innerWidth < 1024 ? blocks.current[i].offsetTop : blocks.current[i].offsetTop - 90
+          })
+
           break
         }
       }
