@@ -9,7 +9,7 @@
   &__title {
     color: $color-yellow;
     transition: opacity .25s ease-in-out;
-    @extend .text-72-semi-bold;
+    @extend .text-80-semi-bold;
 
     &:active {
       opacity: .75;
@@ -18,13 +18,13 @@
 
   &__subtitle {
     color: $color-grey;
-    @extend .text-18-medium;
+    @extend .text-20-medium;
   }
 
   &__link {
     color: $color-white;
     transition: color .25s ease-in-out;
-    @extend .text-18-medium;
+    @extend .text-20-medium;
 
     &:active {
       color: $color-yellow;
