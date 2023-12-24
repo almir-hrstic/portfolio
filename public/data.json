@@ -9,16 +9,12 @@
         "icon": "email"
       },
       {
-        "url": "https://www.linkedin.com/in/almir-hrstic/",
+        "url": "https://almir-hrstic.github.io/portfolio/cv.pdf",
+        "icon": "cv"
+      },
+      {
+        "url": "https://linkedin.com/in/almir-hrstic/",
         "icon": "linkedin"
-      },
-      {
-        "url": "https://github.com/almir-hrstic/",
-        "icon": "github"
-      },
-      {
-        "url": "https://www.facebook.com/almir.hrstic/",
-        "icon": "facebook"
       }
     ]
   },
@@ -30,7 +26,7 @@
         {
           "overline": " 2016 — ",
           "title": "Storytime",
-          "description": "I officially began my journey in late 2016 when I enrolled in a technical university, acquiring theoretical knowledge. Meanwhile, I embarked on a student internship, which provided me with practical experience. I then transitioned into full-time work, assuming numerous responsibilities. I am now exploring new opportunities, with a focus on front-end development and e-commerce."
+          "description": "I officially began my journey in late 2016 when I enrolled in a technical university, acquiring theoretical knowledge. Meanwhile, I embarked on a student internship, which provided me with practical experience. Later, I transitioned into full-time work, taking on numerous responsibilities. I am now exploring new opportunities, with a focus on front-end development and e-commerce."
         }
       ]
     },
@@ -39,9 +35,15 @@
       "title": "Education",
       "entries": [
         {
+          "url": "https://msshkg.co.ba/",
+          "overline": "Gradačac, Sep 2010 — May 2014",
+          "title": "Public Institution Co-educational High School \"Hasan Kikić\", High School of Electrical Engineering",
+          "description": "Technician of Electrical Engineering"
+        },
+        {
           "url": "https://aubih.edu/",
           "overline": "Tuzla, Sep 2016 — May 2020",
-          "title": "American University in Bosnia and Herzegovina",
+          "title": "American University in Bosnia and Herzegovina, Faculty of Information Technology",
           "description": "Bachelor Engineer of Information Technology"
         }
       ]
@@ -51,7 +53,7 @@
       "title": "Experience",
       "entries": [
         {
-          "url": "http://www.starnet.co.ba/",
+          "url": "https://starnet.co.ba/",
           "overline": "Tuzla, Sep 2018 — May 2019",
           "title": "Front-end Developer · StarNet",
           "description": "Student internship, part-time and in a remote environment. Integrated segments of a chosen Bootstrap theme using the Aurelia framework for enhanced reusability."
@@ -60,10 +62,10 @@
           "url": "https://leftor.com/",
           "overline": "Tuzla, Sep 2019 — May 2020",
           "title": "Full-stack Developer · Leftor",
-          "description": "Student internship, part-time and in a hybrid environment. Established CAS and IMS as in-house solutions using React, Bootstrap and Laravel frameworks."
+          "description": "Student internship, part-time and in a hybrid environment. Established IMS and CAS as in-house solutions using React, Bootstrap and Laravel frameworks."
         },
         {
-          "url": "https://www.imel.ba/",
+          "url": "https:/imel.ba/",
           "overline": "Lukavac, Sep 2020 — Aug 2023",
           "title": "WordPress Developer · Imel",
           "description": "Full-time and in a hybrid (largely remote) environment. Developed and maintained custom-tailored e-commerce and other solutions using the WordPress platform."
@@ -121,7 +123,7 @@
           ]
         },
         {
-          "url": "https://www.andy-wolf.com/",
+          "url": "https://andy-wolf.com/",
           "overline": "Imel, 2021",
           "title": "Andy Wolf",
           "tags": [
@@ -144,7 +146,7 @@
           ]
         },
         {
-          "url": "https://www.ic-berlin.com/kerl-eyewear/",
+          "url": "https://ic-berlin.com/kerl-eyewear/",
           "overline": "Imel, 2021",
           "title": "Kerl Eyewear",
           "tags": [
@@ -165,7 +167,7 @@
           ]
         },
         {
-          "url": "https://www.novalabs.at/",
+          "url": "https://novalabs.at/",
           "overline": "Imel, 2021",
           "title": "Nova Labs",
           "tags": [
@@ -211,7 +213,7 @@
           ]
         },
         {
-          "url": "https://www.ic-berlin.com/",
+          "url": "https://ic-berlin.com/",
           "overline": "Imel, 2022",
           "title": "IC Berlin",
           "tags": [
@@ -281,7 +283,7 @@
       "entries": [
         {
           "overline": "— 2023",
-          "title": "Projects",
+          "title": "Notice",
           "description": "The projects referred to above have undergone changes over time, diverging from their initial release, and as such, I cannot assume responsibility for their current status."
         }
       ]

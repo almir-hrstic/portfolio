@@ -6,10 +6,9 @@ import React, { useState, useRef, useEffect } from 'react'
 import Container from './components/container'
 import Entry from './components/entry/index'
 
+import CV from './icons/cv'
 import Email from './icons/e-mail'
 import LinkedIn from './icons/linkedin'
-import GitHub from './icons/github'
-import Facebook from './icons/facebook'
 
 export default function Page() {
 
@@ -17,7 +16,7 @@ export default function Page() {
   const [activeBlock, setActiveBlock] = useState()
 
   const blocks = useRef([])
-  const icons = { email: Email, github: GitHub, linkedin: LinkedIn, facebook: Facebook }
+  const icons = { cv: CV, email: Email, linkedin: LinkedIn}
 
   const getData = () => {
 
