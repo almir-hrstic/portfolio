@@ -2,12 +2,13 @@
 
 import styles from './styles/page.module.scss'
 import React, { useState, useRef, useEffect } from 'react'
+import { setup } from './helpers'
 
 import Container from './components/container'
 import Entry from './components/entry/index'
 
-import CV from './icons/cv'
 import Email from './icons/e-mail'
+import CV from './icons/cv'
 import LinkedIn from './icons/linkedin'
 
 export default function Page() {
@@ -16,7 +17,7 @@ export default function Page() {
   const [activeBlock, setActiveBlock] = useState()
 
   const blocks = useRef([])
-  const icons = { cv: CV, email: Email, linkedin: LinkedIn}
+  const icons = { email: Email, cv: CV, linkedin: LinkedIn }
 
   const getData = () => {
 
@@ -25,40 +26,35 @@ export default function Page() {
 
   const getActiveBlock = () => {
 
-    blocks.current.forEach(block => {
-
-      if (block.children[0].getBoundingClientRect().top <= 1) setActiveBlock(block.id)
-    })
+    blocks.current.forEach(block => block.children[0].getBoundingClientRect().top > 1 ? false : setActiveBlock(block.id))
   }
 
   const updateActiveBlock = () => {
 
-    if (window.location.hash) {
+    if (!window.location.hash) return false
 
-      for (let i = 0; i < blocks.current.length; i++) {
+    for (let i = 0; i < blocks.current.length; i++) {
 
-        if (blocks.current[i].id === window.location.hash.substring(1)) {
+      if (blocks.current[i].id !== window.location.hash.substring(1)) continue
 
-          window.scrollTo({
-
-            top: window.innerWidth < 1024 ? blocks.current[i].offsetTop : blocks.current[i].offsetTop - 90
-          })
-
-          break
-        }
-      }
+      window.scrollTo({ top: window.innerWidth < 1024 ? blocks.current[i].offsetTop : blocks.current[i].offsetTop - 90 })
+      break
     }
   }
 
-  useEffect(() => getData(), [])
+  useEffect(() => {
+
+    setup()
+    getData()
+
+  }, [])
 
   useEffect(() => {
 
-    if (data) {
+    if (!data) return () => false
 
-      updateActiveBlock()
-      window.addEventListener('scroll', getActiveBlock)
-    }
+    updateActiveBlock()
+    window.addEventListener('scroll', getActiveBlock)
 
     return () => window.removeEventListener('scroll', getActiveBlock)
 
@@ -96,7 +92,7 @@ export default function Page() {
 
                   data.header.contact.map(({ url, icon }, index) => (
 
-                    <a href={url} target="_blank" className={styles.contact__link} key={index} >
+                    <a href={url} target="_blank" className={styles.contact__link} key={index}>
                       {React.createElement(icons[icon])}
                     </a>
 

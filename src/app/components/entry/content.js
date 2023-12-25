@@ -52,7 +52,7 @@ const Content = ({ url, overline, title, description, tags, styles }) => {
 
             tags.map((tag, index) => (
 
-              <span className={styles.root__tag} key={index} >
+              <span className={styles.root__tag} key={index}>
                 {tag}
               </span>
 

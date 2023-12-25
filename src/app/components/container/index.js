@@ -1,31 +1,28 @@
 import styles from './container.module.scss'
-import { debounce } from '../../helpers'
 import { useRef, useEffect } from 'react'
+import { debounce, resized } from '../../helpers'
 
 export default function Container({ children }) {
 
   const root = useRef()
 
   const setScreenHeight = () => root.current.style.setProperty('--screen-height', `${window.innerHeight - .01}px`)
-
-  const clearMousePosition = () => {
-
-    if (window.innerWidth < 1024) root.current.style.removeProperty('background')
-  }
+  const clearMousePosition = () => window.innerWidth >= 1024 ? false : root.current.style.removeProperty('background')
 
   const setMousePosition = (event) => {
 
-    if (window.innerWidth >= 1024) {
+    if (window.innerWidth < 1024) return false
 
-      root.current.style.setProperty(
+    root.current.style.setProperty(
 
-        'background',
-        `radial-gradient(640px at ${event.pageX}px ${event.pageY}px, var(--color-blue-light), transparent 75%)`
-      )
-    }
+      'background',
+      `radial-gradient(640px at ${event.pageX}px ${event.pageY}px, var(--color-blue-light), transparent 75%)`
+    )
   }
 
   const setResize = debounce(() => {
+
+    if (!resized()) return false
 
     setScreenHeight()
     clearMousePosition()
