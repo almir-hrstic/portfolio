@@ -20,17 +20,15 @@ const Content = ({ url, overline, title, description, tags, styles }) => {
 
         title &&
 
-        <div className={styles.root__headline}>
+        <p className={styles.root__headline}>
 
           {
             url && <Link />
           }
 
-          <span className={styles.root__title}>
-            {title}
-          </span>
+          {title}
 
-        </div>
+        </p>
 
       }
 

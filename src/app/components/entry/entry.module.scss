@@ -13,16 +13,12 @@
 
   &__headline {
     margin-top: 5px;
+    transition: color .25s ease-in-out;
+    @extend .text-16-medium;
 
     svg {
       margin-right: 10px;
-      transition: color .25s ease-in-out;
     }
-  }
-
-  &__title {
-    font-weight: 500;
-    transition: color .25s ease-in-out;
   }
 
   &__description {
