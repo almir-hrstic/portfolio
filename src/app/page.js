@@ -1,15 +1,15 @@
 'use client'
 
-import styles from './styles/page.module.scss'
+import styles from '../styles/page.module.scss'
 import React, { useState, useRef, useEffect } from 'react'
-import { setup } from './helpers'
+import setup from '../helpers/setup'
 
-import Container from './components/container'
-import Entry from './components/entry/index'
+import Container from '../components/container'
+import Entry from '../components/entry/index'
 
-import Email from './icons/e-mail'
-import CV from './icons/cv'
-import LinkedIn from './icons/linkedin'
+import Email from '../icons/e-mail'
+import CV from '../icons/cv'
+import LinkedIn from '../icons/linkedin'
 
 export default function Page() {
 

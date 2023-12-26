@@ -1,8 +1,8 @@
 'use client'
 
-import styles from './styles/not-found.module.scss'
+import styles from '../styles/not-found.module.scss'
 import { useState, useEffect } from 'react'
-import Container from './components/container'
+import Container from '../components/container'
 
 export default function NotFound() {
 

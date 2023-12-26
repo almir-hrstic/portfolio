@@ -1,6 +1,8 @@
 import styles from './container.module.scss'
 import { useRef, useEffect } from 'react'
-import { debounce, resized } from '../../helpers'
+
+import debounce from '../../helpers/debounce'
+import resized from '../../helpers/resized'
 
 export default function Container({ children }) {
 

@@ -1,5 +1,5 @@
 import styles from './entry.module.scss'
-import Content from '../entry/content'
+import Content from './content'
 
 const Entry = ({ entry }) => {
 
