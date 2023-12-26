@@ -90,9 +90,9 @@ export default function Page() {
 
                 {
 
-                  data.header.contact.map(({ url, icon }, index) => (
+                  data.header.contact.map(({ url, label, icon }, index) => (
 
-                    <a href={url} target="_blank" className={styles.contact__link} key={index}>
+                    <a href={url} target="_blank" className={styles.contact__link} aria-label={label} key={index}>
                       {React.createElement(icons[icon])}
                     </a>
 

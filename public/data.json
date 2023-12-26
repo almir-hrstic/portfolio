@@ -6,14 +6,17 @@
     "contact": [
       {
         "url": "mailto:almirhrstic@gmail.com",
+        "label": "E-Mail",
         "icon": "email"
       },
       {
         "url": "https://almir-hrstic.github.io/portfolio/cv.pdf",
+        "label": "CV",
         "icon": "cv"
       },
       {
-        "url": "https://linkedin.com/in/almir-hrstic/",
+        "url": "https://linkedin.com/in/almir-hrstic",
+        "label": "LinkedIn",
         "icon": "linkedin"
       }
     ]
@@ -24,7 +27,7 @@
       "title": "About",
       "entries": [
         {
-          "overline": " 2016 — ",
+          "overline": "2016 —",
           "title": "Storytime",
           "description": "I officially began my journey in late 2016 when I enrolled in a technical university, acquiring theoretical knowledge. Meanwhile, I embarked on a student internship, which provided me with practical experience. Later, I transitioned into full-time work, taking on numerous responsibilities. I am now exploring new opportunities, with a focus on front-end development and e-commerce."
         }
@@ -35,13 +38,13 @@
       "title": "Education",
       "entries": [
         {
-          "url": "https://msshkg.co.ba/",
+          "url": "https://msshkg.co.ba",
           "overline": "Sep 2010 — May 2014",
           "title": "Co-educational High School \"Hasan Kikić\", High School of Electrical Engineering",
           "description": "Technician of Electrical Engineering"
         },
         {
-          "url": "https://aubih.edu/",
+          "url": "https://aubih.edu",
           "overline": "Sep 2016 — May 2020",
           "title": "American University in Bosnia and Herzegovina, Faculty of Information Technology",
           "description": "Bachelor Engineer of Information Technology"
@@ -53,19 +56,19 @@
       "title": "Experience",
       "entries": [
         {
-          "url": "https://starnet.co.ba/",
+          "url": "https://starnet.co.ba",
           "overline": "Sep 2018 — May 2019",
           "title": "Front-end Developer · StarNet",
           "description": "Internship, part-time and in a remote environment. Integrated segments of a chosen Bootstrap theme using the Aurelia framework for enhanced reusability."
         },
         {
-          "url": "https://leftor.com/",
+          "url": "https://leftor.com",
           "overline": "Sep 2019 — May 2020",
           "title": "Full-stack Developer · Leftor",
           "description": "Internship, part-time and in a hybrid environment. Established IMS and CAS as in-house solutions using React, Bootstrap and Laravel frameworks."
         },
         {
-          "url": "https:/imel.ba/",
+          "url": "https:/imel.ba",
           "overline": "Sep 2020 — Aug 2023",
           "title": "WordPress Developer · Imel",
           "description": "Contract, full-time and in a hybrid environment. Developed and maintained custom-tailored e-commerce and other solutions via WordPress platform."
@@ -105,7 +108,7 @@
           ]
         },
         {
-          "url": "https://iawia.at/",
+          "url": "https://iawia.at",
           "overline": "Imel, 2020",
           "title": "IAWIA",
           "tags": [
@@ -123,7 +126,7 @@
           ]
         },
         {
-          "url": "https://andy-wolf.com/",
+          "url": "https://andy-wolf.com",
           "overline": "Imel, 2021",
           "title": "Andy Wolf",
           "tags": [
@@ -146,7 +149,7 @@
           ]
         },
         {
-          "url": "https://ic-berlin.com/kerl-eyewear/",
+          "url": "https://ic-berlin.com/kerl-eyewear",
           "overline": "Imel, 2021",
           "title": "Kerl Eyewear",
           "tags": [
@@ -167,7 +170,7 @@
           ]
         },
         {
-          "url": "https://novalabs.at/",
+          "url": "https://novalabs.at",
           "overline": "Imel, 2021",
           "title": "Nova Labs",
           "tags": [
@@ -178,7 +181,7 @@
           ]
         },
         {
-          "url": "https://velofood.at/",
+          "url": "https://velofood.at",
           "overline": "Imel, 2021",
           "title": "Velofood",
           "tags": [
@@ -192,7 +195,7 @@
           ]
         },
         {
-          "url": "https://mizzuni.com/",
+          "url": "https://mizzuni.com",
           "overline": "Imel, 2022",
           "title": "Mizzuni",
           "tags": [
@@ -213,7 +216,7 @@
           ]
         },
         {
-          "url": "https://ic-berlin.com/",
+          "url": "https://ic-berlin.com",
           "overline": "Imel, 2022",
           "title": "IC Berlin",
           "tags": [
@@ -226,7 +229,7 @@
           ]
         },
         {
-          "url": "https://indekspravosudja.ba/",
+          "url": "https://indekspravosudja.ba",
           "overline": "Imel, 2023",
           "title": "Judiciary Index",
           "tags": [
@@ -244,7 +247,7 @@
           ]
         },
         {
-          "url": "https://shop.miloselo.ba/",
+          "url": "https://shop.miloselo.ba",
           "title": "Milo Village",
           "overline": "Imel, 2023",
           "tags": [
@@ -255,7 +258,7 @@
           ]
         },
         {
-          "url": "https://theme.norm.cloud/",
+          "url": "https://theme.norm.cloud",
           "overline": "Imel, 2023",
           "title": "Norm Theme",
           "tags": [
@@ -267,7 +270,7 @@
           ]
         },
         {
-          "url": "https://almir-hrstic.github.io/portfolio/",
+          "url": "https://almir-hrstic.github.io/portfolio",
           "overline": "Standalone, 2023",
           "title": "Portfolio",
           "tags": [
