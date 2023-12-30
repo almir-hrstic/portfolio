@@ -1,3 +1,5 @@
+'use client'
+
 import styles from './container.module.scss'
 import { useRef, useEffect } from 'react'
 

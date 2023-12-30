@@ -18,7 +18,6 @@ const Entry = ({ entry }) => {
       <a href={entry.url} target="_blank" className={`${styles.root} ${styles.root____link}`}>
         <Content styles={styles} {...entry} />
       </a>
-
   )
 }
 

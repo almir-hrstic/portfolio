@@ -19,9 +19,9 @@ export default function Page() {
   const blocks = useRef([])
   const icons = { email: Email, cv: CV, linkedin: LinkedIn }
 
-  const getData = () => {
+  const getData = async () => {
 
-    fetch(`${process.env.BASE_URL}/data.json`).then(response => response.json()).then(response => setData(response))
+    await fetch(`${process.env.BASE_URL}/data.json`).then(response => response.json()).then(response => setData(response))
   }
 
   const getActiveBlock = () => {
@@ -64,87 +64,82 @@ export default function Page() {
 
     <Container>
 
-      <div className={styles.root}>
+      {
 
-        {
+        data &&
 
-          data &&
+        <div className={styles.root}>
 
-          <>
+          <div className={styles.header}>
 
-            <div className={styles.header}>
+            <a href={process.env.BASE_URL} className={styles.header__title}>
+              {data.header.title}
+            </a>
 
-              <a href={process.env.BASE_URL} className={styles.header__title}>
-                {data.header.title}
-              </a>
+            <p className={styles.header__subtitle}>
+              {data.header.subtitle}
+            </p>
 
-              <p className={styles.header__subtitle}>
-                {data.header.subtitle}
-              </p>
+            <p className={styles.header__description}>
+              {data.header.description}
+            </p>
 
-              <p className={styles.header__description}>
-                {data.header.description}
-              </p>
-
-              <div className={styles.contact}>
-
-                {
-
-                  data.header.contact.map(({ url, label, icon }, index) => (
-
-                    <a href={url} target="_blank" className={styles.contact__link} aria-label={label} key={index}>
-                      {React.createElement(icons[icon])}
-                    </a>
-
-                  ))
-                }
-
-              </div>
-
-            </div>
-
-            <div className={styles.blocks}>
+            <div className={styles.contact}>
 
               {
 
-                data.blocks.map(({ id, title, entries }, index) => (
+                data.header.contact.map(({ url, label, icon }, index) => (
 
-                  <div id={id} className={activeBlock !== id ? `${styles.block}` : `${styles.block} ${styles.block____active}`} ref={block => blocks.current[index] = block} key={index}>
-
-                    <div className={styles.block__headline}>
-
-                      <a href={`#${id}`} className={styles.block__title}>
-                        {title}
-                      </a>
-
-                    </div>
-
-                    <div className={styles.block__entries}>
-
-                      {
-
-                        entries.map((entry, index) => (
-
-                          <Entry entry={entry} key={index} />
-                        ))
-                      }
-
-                    </div>
-
-                  </div>
+                  <a href={url} target="_blank" className={styles.contact__link} aria-label={label} key={index}>
+                    {React.createElement(icons[icon])}
+                  </a>
 
                 ))
               }
 
             </div>
 
-          </>
+          </div>
 
-        }
+          <div className={styles.blocks}>
 
-      </div>
+            {
+
+              data.blocks.map(({ id, title, entries }, index) => (
+
+                <div id={id} className={activeBlock !== id ? `${styles.block}` : `${styles.block} ${styles.block____active}`} ref={block => blocks.current[index] = block} key={index}>
+
+                  <div className={styles.block__headline}>
+
+                    <a href={`#${id}`} className={styles.block__title}>
+                      {title}
+                    </a>
+
+                  </div>
+
+                  <div className={styles.block__entries}>
+
+                    {
+
+                      entries.map((entry, index) => (
+
+                        <Entry entry={entry} key={index} />
+                      ))
+                    }
+
+                  </div>
+
+                </div>
+
+              ))
+            }
+
+          </div>
+
+        </div>
+
+      }
 
     </Container>
-
   )
 }

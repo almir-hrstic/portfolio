@@ -1,6 +1,6 @@
 export default function resized() {
 
-  let screenWidth = sessionStorage.getItem('screen_width')
+  const screenWidth = sessionStorage.getItem('screen_width')
 
   if (screenWidth === document.documentElement.clientWidth.toString()) return false
 

@@ -14,8 +14,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#092443",
-  "background_color": "#092443",
+  "theme_color": "#06182d",
+  "background_color": "#06182d",
   "start_url": "https://almir-hrstic.github.io/portfolio",
   "display": "standalone"
 }
