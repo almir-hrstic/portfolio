@@ -38,7 +38,7 @@ export default function Page() {
       if (blocks.current[i].id !== window.location.hash.substring(1)) continue
 
       window.scrollTo({ top: window.innerWidth < 1024 ? blocks.current[i].offsetTop : blocks.current[i].offsetTop - 90 })
-      
+
       break
     }
   }
