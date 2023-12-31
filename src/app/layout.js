@@ -5,7 +5,7 @@ const fonts = Inter({ subsets: ['latin'] })
 
 export const generateMetadata = async () => {
 
-  return await fetch(`${process.env.BASE_URL}/meta.json`).then(response => response.json())
+  return await fetch(`${process.env.BASE_URL}/data-meta.json`).then(response => response.json())
 }
 
 export default function Layout({ children }) {
