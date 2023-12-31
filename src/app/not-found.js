@@ -5,7 +5,7 @@ export async function generateMetadata() {
 
   let data = await fetch(`${process.env.BASE_URL}/meta.json`).then(response => response.json())
 
-  return { title: `Page not found | ${data.title.default}` }
+  return { title: `Page not found | ${data?.title?.default}` }
 }
 
 export default function NotFound() {
