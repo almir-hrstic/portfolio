@@ -12,7 +12,12 @@ export default function Error404() {
     await fetch(`${process.env.BASE_URL}/404.json`).then(response => response.json()).then(response => setData(response))
   }
 
-  useEffect(() => getData, [])
+  useEffect(() => {
+
+    getData()
+    console.log(data)
+
+  }, [])
 
   return (
 
