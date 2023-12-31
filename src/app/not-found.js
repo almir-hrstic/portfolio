@@ -1,7 +1,10 @@
 import Container from "../components/container"
 import Error404 from '../components/error-404'
 
-export const metadata = { title: 'Page not found' }
+export const generateMetadata = async () => {
+
+  return await fetch(`${process.env.BASE_URL}/meta.json`).then(response => response.json())
+}
 
 export default function NotFound() {
 
