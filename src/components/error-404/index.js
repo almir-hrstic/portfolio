@@ -15,7 +15,6 @@ export default function Error404() {
   useEffect(() => {
 
     getData()
-    console.log(data)
 
   }, [])
 

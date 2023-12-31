@@ -1,7 +1,7 @@
 import Container from "../components/container"
 import Error404 from '../components/error-404'
 
-export const generateMetadata = async () => {
+export async function generateMetadata() {
 
   let data = await fetch(`${process.env.BASE_URL}/meta.json`).then(response => response.json())
 
