@@ -5,5 +5,6 @@ export default function resized() {
   if (screenWidth === document.documentElement.clientWidth.toString()) return false
 
   sessionStorage.setItem('screen_width', document.documentElement.clientWidth)
+  
   return true
 }
