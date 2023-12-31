@@ -21,7 +21,7 @@ export default function Page() {
 
   const getData = async () => {
 
-    await fetch(`${process.env.BASE_URL}/data.json`).then(response => response.json()).then(response => setData(response))
+    await fetch(`${process.env.BASE_URL}/page.json`).then(response => response.json()).then(response => setData(response))
   }
 
   const getActiveBlock = () => {
