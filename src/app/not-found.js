@@ -1,7 +1,7 @@
 import styles from '../styles/not-found.module.scss'
 import Container from "../components/container"
 
-export const metadata = { title: 'Page not found' }
+export const generateMetadata = async () => ({ title: 'Page not found' })
 
 export default function NotFound() {
 
