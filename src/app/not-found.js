@@ -1,11 +1,11 @@
 import Container from "../components/container"
 import Error404 from '../components/error-404'
 
-export const generateMetadata = async () => {
+export async function generateMetadata() {
 
-  const data = await fetch(`${process.env.BASE_URL}/meta.json`).then(response => response.json())
+  let data = await fetch(`${process.env.BASE_URL}/meta.json`).then(response => response.json())
 
-  return { title: data.test  }
+  return { title: data.test }
 }
 
 export default function NotFound() {
