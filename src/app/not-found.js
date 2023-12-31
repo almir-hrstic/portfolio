@@ -4,7 +4,7 @@ import Error404 from '../components/error-404'
 export const generateMetadata = async () => {
 
   let data = await fetch(`${process.env.BASE_URL}/404-meta.json`).then(response => response.json())
-  
+
   return data
 }
 
