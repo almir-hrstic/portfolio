@@ -3,7 +3,7 @@ import Error404 from '../components/error-404'
 
 export const generateMetadata = async () => {
 
-  const data = await fetch(`${process.env.BASE_URL}/meta.json`).then(response => response.json())
+  let data = await fetch(`${process.env.BASE_URL}/meta.json`).then(response => response.json())
 
   return { ...data, title: data.not_found }
 }
