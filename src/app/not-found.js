@@ -5,7 +5,6 @@ export const generateMetadata = async () => {
 
   let data = await fetch(`${process.env.BASE_URL}/404-meta.json`).then(response => response.json())
   
-
   return data
 }
 
