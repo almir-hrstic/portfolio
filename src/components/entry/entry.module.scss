@@ -2,7 +2,7 @@
 
 .root {
   padding: 20px;
-  background-color: rgba(255, 255, 255, .015);
+  background-color: rgba(255, 255, 255, .01);
   border-radius: 10px;
   margin-top: 20px;
 
@@ -45,21 +45,12 @@
   &____link {
     display: block;
 
-    &:active .root__headline {
+    &:hover .root__headline {
       color: $color-yellow;
     }
   }
 
   &:not(:has(:nth-child(n+2))) * {
     margin-top: 0;
-  }
-
-  // 1024px +
-
-  @media screen and (min-width: $screen-large) {
-
-    &____link:hover .root__headline {
-      color: $color-yellow;
-    }
   }
 }

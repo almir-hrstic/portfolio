@@ -11,7 +11,7 @@
     transition: opacity .25s ease-in-out;
     @extend .text-80-semi-bold;
 
-    &:active {
+    &:hover {
       opacity: .75;
     }
   }
@@ -26,7 +26,7 @@
     transition: color .25s ease-in-out;
     @extend .text-20-medium;
 
-    &:active {
+    &:hover {
       color: $color-yellow;
     }
   }
@@ -35,13 +35,5 @@
 
   @media screen and (min-width: $screen-large) {
     padding: 60px 30px;
-
-    &__title:hover {
-      opacity: .75;
-    }
-
-    &__link:hover {
-      color: $color-yellow;
-    }
   }
 }
