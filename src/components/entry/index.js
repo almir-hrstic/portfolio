@@ -1,7 +1,7 @@
 import styles from './entry.module.scss'
 import Content from './content'
 
-const Entry = ({ entry }) => {
+export default function Entry({ entry }) {
 
   return (
 
@@ -20,5 +20,3 @@ const Entry = ({ entry }) => {
       </a>
   )
 }
-
-export default Entry

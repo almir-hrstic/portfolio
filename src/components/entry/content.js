@@ -1,6 +1,6 @@
 import Link from '../../icons/link'
 
-const Content = ({ url, overline, title, description, tags, styles }) => {
+export default function Content({ url, overline, title, description, tags, styles }) {
 
   return (
 
@@ -59,6 +59,10 @@ const Content = ({ url, overline, title, description, tags, styles }) => {
             ))
           }
 
+          <span className={styles.root__tag} key={tags.length}>
+            ...
+          </span>
+
         </div>
 
       }
@@ -66,5 +70,3 @@ const Content = ({ url, overline, title, description, tags, styles }) => {
     </>
   )
 }
-
-export default Content
