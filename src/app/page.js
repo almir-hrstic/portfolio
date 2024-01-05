@@ -28,30 +28,23 @@ export default function Page() {
 
     for (let i = 0; i < blocks.current.length; i++) {
 
-      if (blocks.current[i].firstChild.getBoundingClientRect().top !== 0) {
+      if (blocks.current[i].firstChild.getBoundingClientRect().top === 0) return setActiveBlock(blocks.current[i].id)
 
-        setActiveBlock(false)
-
-        continue
-      }
-
-      setActiveBlock(blocks.current[i].id)
-
-      break
+      setActiveBlock(false)
     }
   }
 
   const updateActiveBlock = () => {
 
-    if (!window.location.hash) return false
-
     for (let i = 0; i < blocks.current.length; i++) {
 
-      if (blocks.current[i].id !== window.location.hash.substring(1)) continue
+      if (blocks.current[i].id === window.location.hash.substring(1)) {
 
-      window.scrollTo({ top: window.innerWidth < 1024 ? blocks.current[i].offsetTop : blocks.current[i].offsetTop - 90 })
+        return window.scrollTo({
 
-      break
+          top: window.innerWidth < 1024 ? blocks.current[i].offsetTop : blocks.current[i].offsetTop - 90
+        })
+      }
     }
   }
 
