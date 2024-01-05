@@ -26,11 +26,14 @@ export default function Page() {
 
   const getActiveBlock = () => {
 
-    if (blocks.current[0].getBoundingClientRect().top >= 0) return setActiveBlock(false)
-
     for (let i = 0; i < blocks.current.length; i++) {
 
-      if (blocks.current[i].firstChild.getBoundingClientRect().top !== 0) continue
+      if (blocks.current[i].firstChild.getBoundingClientRect().top !== 0) {
+
+        setActiveBlock(false)
+
+        continue
+      }
 
       setActiveBlock(blocks.current[i].id)
 
