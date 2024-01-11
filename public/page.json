@@ -15,7 +15,7 @@
         "icon": "cv"
       },
       {
-        "url": "https://linkedin.com/in/almir-hrstic",
+        "url": "https://www.linkedin.com/in/almir-hrstic",
         "label": "LinkedIn",
         "icon": "linkedin"
       }
@@ -38,13 +38,13 @@
       "title": "Education",
       "entries": [
         {
-          "url": "https://msshkg.co.ba",
+          "url": "https://www.msshkg.co.ba",
           "overline": "Sep 2010 — May 2014",
           "title": "Co-educational High School \"Hasan Kikić\", High School of Electrical Engineering",
           "description": "Technician of Electrical Engineering"
         },
         {
-          "url": "https://aubih.edu",
+          "url": "https://www.aubih.edu",
           "overline": "Sep 2016 — May 2020",
           "title": "American University in Bosnia and Herzegovina, Faculty of Information Technology",
           "description": "Bachelor Engineer of Information Technology"
@@ -56,19 +56,19 @@
       "title": "Experience",
       "entries": [
         {
-          "url": "https://starnet.co.ba",
+          "url": "https://www.starnet.co.ba",
           "overline": "Sep 2018 — May 2019",
           "title": "Front-end Developer · StarNet",
           "description": "Internship, part-time and in a remote environment. Integrated segments of a Bootstrap theme using Aurelia framework for enhanced reusability."
         },
         {
-          "url": "https://leftor.com",
+          "url": "https://www.leftor.com",
           "overline": "Sep 2019 — May 2020",
           "title": "Full-stack Developer · Leftor",
           "description": "Internship, part-time and in a hybrid environment. Established IMS and CAS as in-house solutions using React, Bootstrap and Laravel frameworks."
         },
         {
-          "url": "https://imel.ba",
+          "url": "https://www.imel.ba",
           "overline": "Sep 2020 — Aug 2023",
           "title": "WordPress Developer · Imel",
           "description": "Full-time and in a hybrid environment. Developed custom-tailored solutions via WordPress platform and various client-side technologies."
@@ -114,7 +114,7 @@
           ]
         },
         {
-          "url": "https://iawia.at",
+          "url": "https://www.iawia.at",
           "overline": "Imel, 2020",
           "title": "IAWIA",
           "tags": [
@@ -131,7 +131,7 @@
           ]
         },
         {
-          "url": "https://andy-wolf.com",
+          "url": "https://www.andy-wolf.com",
           "overline": "Imel, 2021",
           "title": "Andy Wolf",
           "tags": [
@@ -144,7 +144,7 @@
           ]
         },
         {
-          "url": "https://icangotocollege.com",
+          "url": "https://www.icangotocollege.com",
           "overline": "Imel, 2021",
           "title": "CCCO",
           "tags": [
@@ -153,7 +153,7 @@
           ]
         },
         {
-          "url": "https://ic-berlin.com/kerl-eyewear",
+          "url": "https://www.ic-berlin.com/kerl-eyewear",
           "overline": "Imel, 2021",
           "title": "Kerl Eyewear",
           "tags": [
@@ -174,7 +174,7 @@
           ]
         },
         {
-          "url": "https://novalabs.at",
+          "url": "https://www.novalabs.at",
           "overline": "Imel, 2021",
           "title": "Nova Labs",
           "tags": [
@@ -184,7 +184,7 @@
           ]
         },
         {
-          "url": "https://velofood.at",
+          "url": "https://www.velofood.at",
           "overline": "Imel, 2021",
           "title": "Velofood",
           "tags": [
@@ -197,7 +197,7 @@
           ]
         },
         {
-          "url": "https://mizzuni.com",
+          "url": "https://www.mizzuni.com",
           "overline": "Imel, 2022",
           "title": "Mizzuni",
           "tags": [
@@ -217,7 +217,7 @@
           ]
         },
         {
-          "url": "https://ic-berlin.com",
+          "url": "https://www.ic-berlin.com",
           "overline": "Imel, 2022",
           "title": "IC Berlin",
           "tags": [
@@ -229,7 +229,7 @@
           ]
         },
         {
-          "url": "https://indekspravosudja.ba",
+          "url": "https://www.indekspravosudja.ba",
           "overline": "Imel, 2023",
           "title": "Judiciary Index",
           "tags": [
@@ -256,7 +256,7 @@
           ]
         },
         {
-          "url": "https://theme.norm.cloud",
+          "url": "https://www.theme.norm.cloud",
           "overline": "Imel, 2023",
           "title": "Norm Theme",
           "tags": [
