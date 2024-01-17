@@ -58,11 +58,7 @@ export default function Content({ url, overline, title, description, tags, style
 
             ))
           }
-
-          <span className={styles.root__tag} key={tags.length}>
-            ...
-          </span>
-
+          
         </div>
 
       }
