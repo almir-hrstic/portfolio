@@ -4,12 +4,5 @@
   display: flex;
   width: 100%;
   min-height: var(--screen-height, 100vh);
-  background: radial-gradient(ellipse at center, $color-blue-light, transparent 75%);
-  --color-blue-light: #{$color-blue-light};
-
-  /* 1024px + */
-
-  @media screen and (min-width: $screen-large) {
-    background: none;
-  }
+  background: radial-gradient(ellipse at center, $color-blue-light, transparent 75%) no-repeat fixed;
 }
