@@ -57,6 +57,11 @@
   /* 1024px + */
 
   @media screen and (min-width: $screen-large) {
+    margin-top: 0;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
 
     &____link:hover .root__headline {
       color: $color-yellow;

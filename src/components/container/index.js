@@ -21,8 +21,8 @@ export default function Container({ children }) {
 
   useEffect(() => {
 
-    setScreenHeight()
     window.addEventListener('resize', setResize)
+    setScreenHeight()
 
     return () => window.removeEventListener('resize', setResize)
 

@@ -28,13 +28,15 @@ export default function Page() {
 
     for (let i = 0; i < blocks.current.length; i++) {
 
-      if (blocks.current[i].firstChild.getBoundingClientRect().top === 0) return setActiveBlock(blocks.current[i].id)
-
-      setActiveBlock(false)
+      if (blocks.current[i].firstChild.getBoundingClientRect().top >= 0) return setActiveBlock(blocks.current[i].id)
     }
   }
 
   const updateActiveBlock = () => {
+
+    setActiveBlock(blocks.current[0].id)
+
+    if (!window.location.hash) return false
 
     for (let i = 0; i < blocks.current.length; i++) {
 
@@ -59,8 +61,8 @@ export default function Page() {
 
     if (!data) return () => false
 
-    updateActiveBlock()
     window.addEventListener('scroll', getActiveBlock)
+    updateActiveBlock()
 
     return () => window.removeEventListener('scroll', getActiveBlock)
 
@@ -89,6 +91,21 @@ export default function Page() {
             <p className={styles.header__description}>
               {data.header.description}
             </p>
+
+            <div className={styles.navigation}>
+
+              {
+
+                data.blocks.map(({ id, title }, index) => (
+
+                  <a className={activeBlock !== id ? `${styles.navigation__link}` : `${styles.navigation__link} ${styles.navigation__link____active}`} href={`#${id}`} key={index}>
+                    {title}
+                  </a>
+
+                ))
+              }
+
+            </div>
 
             <div className={styles.contact}>
 
