@@ -1,10 +1,10 @@
-export default function debounce(callback) {
+export default function debounce(callback, timeout = 1000) {
 
   let trigger
 
-  return () => {
+  return (...args) => {
 
     clearTimeout(trigger)
-    trigger = setTimeout(callback, 1000)
+    trigger = setTimeout(() => callback.apply(this, args), timeout)
   }
 }

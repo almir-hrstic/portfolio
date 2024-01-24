@@ -1,10 +1,30 @@
+const screen = {}
+
+if (typeof document !== 'undefined') {
+
+  screen.width = document.documentElement.clientWidth
+  screen.height = document.documentElement.clientHeight
+}
+
 export default function resized() {
 
-  const screenWidth = sessionStorage.getItem('screen_width')
+  if (screen.resized) {
 
-  if (screenWidth === document.documentElement.clientWidth.toString()) return false
+    clearTimeout(screen.resized)
+    screen.resized = setTimeout(() => screen.resized = false, 1000)
 
-  sessionStorage.setItem('screen_width', document.documentElement.clientWidth)
-  
-  return true
+    return true
+  }
+
+  if (screen.width !== document.documentElement.clientWidth || screen.height !== document.documentElement.clientHeight) {
+
+    screen.resized = true
+
+    screen.width = document.documentElement.clientWidth
+    screen.height = document.documentElement.clientHeight
+
+    return true
+  }
+
+  return false
 }

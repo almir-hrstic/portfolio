@@ -2,7 +2,6 @@
 
 import styles from '../styles/page.module.scss'
 import React, { useState, useRef, useEffect } from 'react'
-import setup from '../helpers/setup'
 
 import Container from '../components/container'
 import Entry from '../components/entry/index'
@@ -52,7 +51,6 @@ export default function Page() {
 
   useEffect(() => {
 
-    setup()
     getData()
 
   }, [])
