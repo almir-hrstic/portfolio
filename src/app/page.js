@@ -2,6 +2,7 @@
 
 import styles from '../styles/page.module.scss'
 import React, { useState, useRef, useEffect } from 'react'
+import getUrl from '../helpers/getUrl'
 
 import Container from '../components/container'
 import Entry from '../components/entry/index'
@@ -20,7 +21,7 @@ export default function Page() {
 
   const getData = async () => {
 
-    await fetch(`${process.env.BASE_URL}/page.json`).then(response => response.json()).then(response => setData(response))
+    await fetch(getUrl('page.json')).then(response => response.json()).then(response => setData(response))
   }
 
   const getActiveBlock = () => {
@@ -78,7 +79,7 @@ export default function Page() {
 
           <div className={styles.header}>
 
-            <a href={process.env.BASE_URL} className={styles.header__title}>
+            <a href={getUrl()} className={styles.header__title}>
               {data.header.title}
             </a>
 

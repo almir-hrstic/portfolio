@@ -2,6 +2,7 @@
 
 import styles from './error-404.module.scss'
 import { useState, useEffect } from 'react'
+import getUrl from '../../helpers/getUrl'
 
 export default function Error404() {
 
@@ -9,7 +10,7 @@ export default function Error404() {
 
   const getData = async () => {
 
-    await fetch(`${process.env.BASE_URL}/404.json`).then(response => response.json()).then(response => setData(response))
+    await fetch(getUrl('404.json')).then(response => response.json()).then(response => setData(response))
   }
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function Error404() {
 
     <div className={styles.root}>
 
-      <a href={process.env.BASE_URL} className={styles.root__title}>
+      <a href={getUrl()} className={styles.root__title}>
         {data.title}
       </a>
 
@@ -32,7 +33,7 @@ export default function Error404() {
         {data.message}
       </p>
 
-      <a href={process.env.BASE_URL} className={styles.root__link}>
+      <a href={getUrl()} className={styles.root__link}>
         {data.link}
       </a>
 

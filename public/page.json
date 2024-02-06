@@ -15,7 +15,7 @@
         "icon": "cv"
       },
       {
-        "url": "https://www.linkedin.com/in/almir-hrstic",
+        "url": "https://www.linkedin.com/in/almir-hrstic/",
         "label": "LinkedIn",
         "icon": "linkedin"
       }
@@ -267,7 +267,7 @@
           ]
         },
         {
-          "url": "https://almir-hrstic.github.io/portfolio",
+          "url": "https://almir-hrstic.github.io/portfolio/",
           "overline": "Personal, 2023",
           "title": "Portfolio",
           "tags": [
