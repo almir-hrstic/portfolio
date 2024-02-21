@@ -1,9 +1,9 @@
 const screen = {}
 
-if (typeof document !== 'undefined') {
+if (typeof window !== 'undefined') {
 
-  screen.width = document.documentElement.clientWidth
-  screen.height = document.documentElement.clientHeight
+  screen.width = window.innerWidth
+  screen.height = window.innerHeight
 }
 
 export default function resized() {
@@ -16,12 +16,12 @@ export default function resized() {
     return true
   }
 
-  if (screen.width !== document.documentElement.clientWidth || screen.height !== document.documentElement.clientHeight) {
+  if (screen.width !== window.innerWidth || screen.height !== window.innerHeight) {
 
     screen.resized = true
 
-    screen.width = document.documentElement.clientWidth
-    screen.height = document.documentElement.clientHeight
+    screen.width = window.innerWidth
+    screen.height = window.innerHeight
 
     return true
   }
