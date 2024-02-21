@@ -10,7 +10,11 @@ export default function Container({ children }) {
 
   const root = useRef()
 
-  const setScreenHeight = () => root.current.style.setProperty('--screen-height', `${window.innerHeight - .01}px`)
+  const setScreenHeight = () => {
+
+    root.current.style.removeProperty('--screen-height')
+    root.current.style.setProperty('--screen-height', `${root.current.getBoundingClientRect().height.toFixed(1)}px`)
+  }
 
   const setResize = debounce(() => {
 
