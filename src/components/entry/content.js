@@ -58,7 +58,7 @@ export default function Content({ url, overline, title, description, tags, style
 
             ))
           }
-          
+
         </div>
 
       }

@@ -1,6 +1,7 @@
 'use client'
 
 import styles from '../styles/page.module.scss'
+import dynamic from 'next/dynamic'
 import React, { useState, useRef, useEffect } from 'react'
 import getUrl from '../helpers/getUrl'
 
@@ -11,10 +12,12 @@ import Email from '../icons/e-mail'
 import CV from '../icons/cv'
 import LinkedIn from '../icons/linkedin'
 
+const Navigation = dynamic(() => import('../components/navigation'), { ssr: false })
+
 export default function Page() {
 
   const [data, setData] = useState()
-  const [activeBlock, setActiveBlock] = useState()
+  const [activeBlock, setActiveBlock] = useState(0)
 
   const blocks = useRef([])
   const icons = { email: Email, cv: CV, linkedin: LinkedIn }
@@ -28,13 +31,11 @@ export default function Page() {
 
     for (let i = 0; i < blocks.current.length; i++) {
 
-      if (blocks.current[i].firstChild.getBoundingClientRect().top >= 0) return setActiveBlock(blocks.current[i].id)
+      if (blocks.current[i].firstChild.getBoundingClientRect().top >= 0) return setActiveBlock(i)
     }
   }
 
   const updateActiveBlock = () => {
-
-    setActiveBlock(blocks.current[0].id)
 
     if (!window.location.hash) return false
 
@@ -44,7 +45,8 @@ export default function Page() {
 
         return window.scrollTo({
 
-          top: window.innerWidth < 1024 ? blocks.current[i].offsetTop : blocks.current[i].offsetTop - 90
+          top: window.innerWidth < 1024 ? blocks.current[i].offsetTop : blocks.current[i].offsetTop - 90,
+          behavior: 'instant'
         })
       }
     }
@@ -91,20 +93,7 @@ export default function Page() {
               {data.header.description}
             </p>
 
-            <div className={styles.navigation}>
-
-              {
-
-                data.blocks.map(({ id, title }, index) => (
-
-                  <a className={activeBlock !== id ? `${styles.navigation__link}` : `${styles.navigation__link} ${styles.navigation__link____active}`} href={`#${id}`} key={index}>
-                    {title}
-                  </a>
-
-                ))
-              }
-
-            </div>
+            <Navigation styles={styles} blocks={data.blocks} activeBlock={activeBlock} />
 
             <div className={styles.contact}>
 
@@ -146,6 +135,7 @@ export default function Page() {
                       entries.map((entry, index) => (
 
                         <Entry entry={entry} key={index} />
+
                       ))
                     }
 
