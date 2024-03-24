@@ -1,7 +1,6 @@
 'use client'
 
 import styles from '../styles/page.module.scss'
-import dynamic from 'next/dynamic'
 import React, { useState, useRef, useEffect } from 'react'
 import getUrl from '../helpers/getUrl'
 
@@ -11,8 +10,6 @@ import Entry from '../components/entry/index'
 import Email from '../icons/e-mail'
 import CV from '../icons/cv'
 import LinkedIn from '../icons/linkedin'
-
-const Navigation = dynamic(() => import('../components/navigation'), { ssr: false })
 
 export default function Page() {
 
@@ -45,8 +42,7 @@ export default function Page() {
 
         return window.scrollTo({
 
-          top: window.innerWidth < 1024 ? blocks.current[i].offsetTop : blocks.current[i].offsetTop - 90,
-          behavior: 'instant'
+          top: window.innerWidth < 1024 ? blocks.current[i].offsetTop : blocks.current[i].offsetTop - 90
         })
       }
     }
@@ -93,7 +89,20 @@ export default function Page() {
               {data.header.description}
             </p>
 
-            <Navigation styles={styles} blocks={data.blocks} activeBlock={activeBlock} />
+            <div className={styles.navigation}>
+
+              {
+
+                data.blocks.map(({ id, title }, index) => (
+
+                  <a className={activeBlock !== index ? `${styles.navigation__link}` : `${styles.navigation__link} ${styles.navigation__link____active}`} href={`#${id}`} key={index}>
+                    {title}
+                  </a>
+
+                ))
+              }
+
+            </div>
 
             <div className={styles.contact}>
 

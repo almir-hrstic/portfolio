@@ -32,6 +32,51 @@
       color: $color-grey;
     }
 
+    .navigation {
+      display: none;
+      margin-top: 90px;
+      @extend .text-12-semi-bold;
+
+      &__link {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        transition: color .25s ease-in-out;
+
+        &:not(:first-of-type) {
+          margin-top: 15px;
+        }
+
+        &::before {
+          width: 30px;
+          margin-right: 15px;
+          border-bottom: 1px solid $color-grey;
+          transition: width .25s ease-in-out;
+          content: "";
+        }
+
+        &:hover {
+          color: $color-yellow;
+
+          &:before {
+            width: 60px;
+          }
+        }
+
+        &____active {
+          color: $color-yellow;
+
+          &:before {
+            width: 60px;
+          }
+
+          &:hover {
+            color: $color-yellow-light;
+          }
+        }
+      }
+    }
+
     .contact {
       display: flex;
       flex-wrap: wrap;
@@ -113,6 +158,10 @@
 
       &__title:hover {
         opacity: .75;
+      }
+
+      .navigation {
+        display: block;
       }
 
       .contact {
