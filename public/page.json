@@ -10,14 +10,19 @@
         "icon": "email"
       },
       {
-        "url": "https://almir-hrstic.github.io/portfolio/curriculum-vitae.pdf",
-        "label": "CV",
-        "icon": "cv"
+        "url": "tel:+49 172 5860513",
+        "label": "Phone",
+        "icon": "phone"
       },
       {
         "url": "https://www.linkedin.com/in/almir-hrstic/",
         "label": "LinkedIn",
         "icon": "linkedin"
+      },
+      {
+        "url": "https://almir-hrstic.github.io/portfolio/curriculum-vitae.pdf",
+        "label": "CV",
+        "icon": "cv"
       }
     ]
   },

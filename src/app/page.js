@@ -8,8 +8,9 @@ import Container from '../components/container'
 import Entry from '../components/entry/index'
 
 import Email from '../icons/e-mail'
-import CV from '../icons/cv'
+import Phone from '../icons/phone'
 import LinkedIn from '../icons/linkedin'
+import CV from '../icons/cv'
 
 export default function Page() {
 
@@ -17,7 +18,7 @@ export default function Page() {
   const [activeBlock, setActiveBlock] = useState(0)
 
   const blocks = useRef([])
-  const icons = { email: Email, cv: CV, linkedin: LinkedIn }
+  const icons = { email: Email, phone: Phone, linkedin: LinkedIn, cv: CV }
 
   const getData = async () => {
 
@@ -127,7 +128,7 @@ export default function Page() {
 
               data.blocks.map(({ id, title, entries }, index) => (
 
-                <div id={id} className={activeBlock !== id ? `${styles.block}` : `${styles.block} ${styles.block____active}`} ref={block => blocks.current[index] = block} key={index}>
+                <div id={id} className={activeBlock !== index ? `${styles.block}` : `${styles.block} ${styles.block____active}`} ref={block => blocks.current[index] = block} key={index}>
 
                   <div className={styles.block__headline}>
 
